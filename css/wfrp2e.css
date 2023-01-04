@@ -1,0 +1,120 @@
+.flexcol {
+  display: flex;
+  flex-direction: column;
+}
+.flexrow {
+  display: flex;
+  flex-direction: row;
+}
+.alignright {
+  float: right;
+}
+.flexshrink {
+  flex: 0 1 auto;
+}
+.flexfill {
+  flex: 1 0 auto;
+}
+.pc10 {
+  width: 10%;
+}
+.pc20 {
+  width: 20%;
+}
+.pc30 {
+  width: 30%;
+}
+.pc40 {
+  width: 40%;
+}
+.pc50 {
+  width: 50%;
+}
+.pc60 {
+  width: 60%;
+}
+.pc70 {
+  width: 70%;
+}
+.pc80 {
+  width: 80%;
+}
+.pc90 {
+  width: 90%;
+}
+.pc100 {
+  width: 100%;
+}
+.smallfont {
+  font-size: small;
+}
+.smallerfont {
+  font-size: smaller;
+}
+.mediumfont {
+  font-size: medium;
+}
+.largefont {
+  font-size: large;
+}
+.largerfont {
+  font-size: larger;
+}
+.wfrp2e.sheet.item form {
+  display: flex;
+  flex-direction: column;
+}
+.wfrp2e.sheet.item .sheet-body {
+  flex: 1;
+}
+.wfrp2e.sheet.item .sheet-body .editor {
+  flex: 1;
+}
+.wfrp2e.sheet.actor .core-stats {
+  display: flex;
+  flex-direction: row;
+}
+.wfrp2e.sheet.actor .core-stats .stats {
+  width: 60%;
+}
+.wfrp2e.sheet.actor .core-stats .skill {
+  width: 40%;
+}
+.wfrp2e.primary-stat-block .startingrow {
+  text-align: center;
+}
+.wfrp2e.primary-stat-block .statrow {
+  text-align: center;
+}
+.wfrp2e.primary-stat-block .columnheader {
+  text-align: left;
+}
+.wfrp2e.primary-stat-block .mainheader {
+  text-align: center;
+  font-size: smaller;
+}
+.wfrp2e.secondary-stat-block .startingrow {
+  text-align: center;
+}
+.wfrp2e.secondary-stat-block .statrow {
+  text-align: center;
+}
+.wfrp2e.secondary-stat-block .columnheader {
+  text-align: left;
+}
+.wfrp2e.secondary-stat-block .mainheader {
+  text-align: center;
+  font-size: smaller;
+}
+.wfrp2e .item-create {
+  margin-left: auto;
+}
+.wfrp2e .name-column {
+  text-align: left;
+}
+.wfrp2e .field-column {
+  text-align: center;
+}
+.wfrp2e .skill-category {
+  text-align: center;
+}

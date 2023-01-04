@@ -1,0 +1,60 @@
+<td class="name-column"  width = "50%">{{name}}</td>
+<td class="field-column" width = "10%">{{system.weight}}</td>
+<td class="field-column" width = "10%"><input class ="inventory-item-quantity" style="width: 30px;" type = "text" value = {{this.system.quantity}} data-item="{{this.id}}"></td>
+
+{{#if (compareString this.type "item")}}
+    <td class="field-column" width = "10%">-</td>
+    <td class="field-column" width = "10%">-</td>
+{{/if}}
+{{#if (compareString this.type "consumable")}}
+    <td class="field-column" width = "10%">
+        <p>{{this.system.uses.value}}/{{this.system.uses.max}}</p>
+    </td>
+    <td class="field-column" width = "10%">
+        {{#if (numEquals this.system.quantity 0)}}
+            <button style="width: 80%;" type="button" disabled>{{localize "wfrp2e.characters.ui.inventoryUse"}}</button>
+        {{else}}
+            <button class="inventory-consumable-button" style="width: 80%;" data-item="{{this.id}}" type="button">{{localize "wfrp2e.characters.ui.inventoryUse"}}</button>
+        {{/if}}
+    </td>
+{{/if}}
+{{#if (compareString this.type "tool")}}
+    <td class="field-column" width = "10%">
+        {{#if this.system.deteriorates}}
+            <p>{{this.system.uses.value}}/{{this.system.uses.max}}</p>
+        {{else}}
+            -
+        {{/if}}
+    </td>
+    <td class="field-column" width = "10%">
+        {{#if this.system.deteriorates}}
+            {{#if (numEquals this.system.quantity 0)}}
+                <button style="width: 80%;" type="button" disabled>{{localize "wfrp2e.characters.ui.inventoryUse"}}</button>
+            {{else}}
+                <button class="inventory-consumable-button" style="width: 80%;" data-item="{{this.id}}" type="button">{{localize "wfrp2e.characters.ui.inventoryUse"}}</button>
+            {{/if}}
+        {{else}}
+            -
+        {{/if}}
+    </td>
+{{/if}}
+{{#if (compareString this.type "weapon")}}
+    <td class="field-column" width = "10%">-</td>
+    <td class="field-column" width = "10%">
+        {{#if this.system.equiped}}
+            <button class="inventory-unequip-weapon" style="width: 80%;" data-weapon="{{this.id}}" type="button">{{localize "wfrp2e.characters.ui.inventoryUnEquip"}}</button>
+        {{else}}
+            <button class="inventory-equip-weapon" style="width: 80%;" data-weapon="{{this.id}}" type="button">{{localize "wfrp2e.characters.ui.inventoryEquip"}}</button>
+        {{/if}}
+    </td>
+{{/if}}
+{{#if (compareString this.type "armor")}}
+    <td class="field-column" width = "10%">-</td>
+    <td class="field-column" width = "10%">
+        {{#if this.system.equiped}}
+            <button class="inventory-equip-armor" style="width: 80%;" data-armor="{{this.id}}" type="button">{{localize "wfrp2e.characters.ui.inventoryEquip"}}</button>
+        {{else}}
+            <button class="inventory-unequip-armor" style="width: 80%;" data-armor="{{this.id}}" type="button">{{localize "wfrp2e.characters.ui.inventoryUnEquip"}}</button>
+        {{/if}}
+    </td>
+{{/if}}

@@ -1,0 +1,91 @@
+<div class = "wfrp2e primary-stat-block">
+    <header class = "mainheader">
+        <h1>{{localize "wfrp2e.characters.ui.mainProfileHeader"}}</h1>
+    </header>
+    <table>
+        <!--Table headers-->
+        <tr>
+            <th width="20%">{{localize "wfrp2e.characters.ui.main"}}</th>
+            <th width="10%"><a>{{localize "wfrp2e.attributes.weaponSkillAbr"}}</a></th>
+            <th width="10%"><a>{{localize "wfrp2e.attributes.ballisticSkillAbr"}}</a></th>
+            <th width="10%"><a>{{localize "wfrp2e.attributes.strengthAbr"}}</a></th>
+            <th width="10%"><a>{{localize "wfrp2e.attributes.toughnessAbr"}}</a></th>
+            <th width="10%"><a>{{localize "wfrp2e.attributes.agilityAbr"}}</a></th>
+            <th width="10%"><a>{{localize "wfrp2e.attributes.intelligenceAbr"}}</a></th>
+            <th width="10%"><a>{{localize "wfrp2e.attributes.willPowerAbr"}}</a></th>
+            <th width="10%"><a>{{localize "wfrp2e.attributes.fellowshipAbr"}}</a></th>
+        </tr>
+        <!--Starting stats-->  
+        <tr class = "statrow  startingrow">
+            <th class = "columnheader">{{localize "wfrp2e.characters.ui.starting"}}</th>
+            <td><input name = "data.profile.main.ws.base" type = "text" value = "{{data.profile.main.ws.base}}" data-type = "Number" placeholder="32"/></td>
+            <td><input name = "data.profile.main.bs.base" type = "text" value = "{{data.profile.main.bs.base}}" data-type = "Number" placeholder="32"/></td>
+            <td><input name = "data.profile.main.str.base" type = "text" value = "{{data.profile.main.str.base}}" data-type = "Number" placeholder="32"/></td>
+            <td><input name = "data.profile.main.tou.base" type = "text" value = "{{data.profile.main.tou.base}}" data-type = "Number" placeholder="32"/></td>
+            <td><input name = "data.profile.main.agi.base" type = "text" value = "{{data.profile.main.agi.base}}" data-type = "Number" placeholder="32"/></td>
+            <td><input name = "data.profile.main.int.base" type = "text" value = "{{data.profile.main.int.base}}" data-type = "Number" placeholder="32"/></td>
+            <td><input name = "data.profile.main.wil.base" type = "text" value = "{{data.profile.main.wil.base}}" data-type = "Number" placeholder="32"/></td>
+            <td><input name = "data.profile.main.fel.base" type = "text" value = "{{data.profile.main.fel.base}}" data-type = "Number" placeholder="32"/></td>
+        </tr>
+        <!--Talent modifiers-->
+        <tr class = "statrow talentrow">
+            <th class = "columnheader">{{localize "wfrp2e.characters.ui.talents"}}</th>
+            <td><input name = "data.profile.main.ws.talent" type = "text" value = "{{data.profile.main.ws.talent}}" data-type = "Number" placeholder="0"/></td>
+            <td><input name = "data.profile.main.bs.talent" type = "text" value = "{{data.profile.main.bs.talent}}" data-type = "Number" placeholder="0"/></td>
+            <td><input name = "data.profile.main.str.talent" type = "text" value = "{{data.profile.main.str.talent}}" data-type = "Number" placeholder="0"/></td>
+            <td><input name = "data.profile.main.tou.talent" type = "text" value = "{{data.profile.main.tou.talent}}" data-type = "Number" placeholder="0"/></td>
+            <td><input name = "data.profile.main.agi.talent" type = "text" value = "{{data.profile.main.agi.talent}}" data-type = "Number" placeholder="0"/></td>
+            <td><input name = "data.profile.main.int.talent" type = "text" value = "{{data.profile.main.int.talent}}" data-type = "Number" placeholder="0"/></td>
+            <td><input name = "data.profile.main.wil.talent" type = "text" value = "{{data.profile.main.wil.talent}}" data-type = "Number" placeholder="0"/></td>
+            <td><input name = "data.profile.main.fel.talent" type = "text" value = "{{data.profile.main.fel.talent}}" data-type = "Number" placeholder="0"/></td>
+        </tr>
+        <!--Other modifiers-->
+        <tr class = "statrow modifierrow">
+            <th class = "columnheader">{{localize "wfrp2e.characters.ui.modifier"}}</th>
+            <td><input name = "data.profile.main.ws.mod" type = "text" value = "{{data.profile.main.ws.mod}}" data-type = "Number" placeholder="0"/></td>
+            <td><input name = "data.profile.main.bs.mod" type = "text" value = "{{data.profile.main.bs.mod}}" data-type = "Number" placeholder="0"/></td>
+            <td><input name = "data.profile.main.str.mod" type = "text" value = "{{data.profile.main.str.mod}}" data-type = "Number" placeholder="0"/></td>
+            <td><input name = "data.profile.main.tou.mod" type = "text" value = "{{data.profile.main.tou.mod}}" data-type = "Number" placeholder="0"/></td>
+            <td><input name = "data.profile.main.agi.mod" type = "text" value = "{{data.profile.main.agi.mod}}" data-type = "Number" placeholder="0"/></td>
+            <td><input name = "data.profile.main.int.mod" type = "text" value = "{{data.profile.main.int.mod}}" data-type = "Number" placeholder="0"/></td>
+            <td><input name = "data.profile.main.wil.mod" type = "text" value = "{{data.profile.main.wil.mod}}" data-type = "Number" placeholder="0"/></td>
+            <td><input name = "data.profile.main.fel.mod" type = "text" value = "{{data.profile.main.fel.mod}}" data-type = "Number" placeholder="0"/></td>
+        </tr>
+        <!--Maximum advances-->
+        <tr class = "statrow careerrow">
+            <th class = "columnheader">{{localize "wfrp2e.characters.ui.career"}}</th>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <!--Invested advances-->
+        <tr class = "statrow advancerow">
+            <th class = "columnheader">{{localize "wfrp2e.characters.ui.advance"}}</th>
+            <td><input name = "data.profile.main.ws.advance" type = "text" value = "{{data.profile.main.ws.advance}}" data-type = "Number" step="1" placeholder="0"/></td>
+            <td><input name = "data.profile.main.bs.advance" type = "text" value = "{{data.profile.main.bs.advance}}" data-type = "Number" step="1" placeholder="0"/></td>
+            <td><input name = "data.profile.main.str.advance" type = "text" value = "{{data.profile.main.str.advance}}" data-type = "Number" step="1" placeholder="0"/></td>
+            <td><input name = "data.profile.main.tou.advance" type = "text" value = "{{data.profile.main.tou.advance}}" data-type = "Number" step="1" placeholder="0"/></td>
+            <td><input name = "data.profile.main.agi.advance" type = "text" value = "{{data.profile.main.agi.advance}}" data-type = "Number" step="1" placeholder="0"/></td>
+            <td><input name = "data.profile.main.int.advance" type = "text" value = "{{data.profile.main.int.advance}}" data-type = "Number" step="1" placeholder="0"/></td>
+            <td><input name = "data.profile.main.wil.advance" type = "text" value = "{{data.profile.main.wil.advance}}" data-type = "Number" step="1" placeholder="0"/></td>
+            <td><input name = "data.profile.main.fel.advance" type = "text" value = "{{data.profile.main.fel.advance}}" data-type = "Number" step="1" placeholder="0"/></td>
+        </tr>
+        <!--Total value-->
+        <tr class = "statrow totalrow">
+            <th class = "columnheader">{{localize "wfrp2e.characters.ui.total"}}</th>
+            <td>{{data.profile.main.ws.value}}</td>
+            <td>{{data.profile.main.bs.value}}</td>
+            <td>{{data.profile.main.str.value}}</td>
+            <td>{{data.profile.main.tou.value}}</td>
+            <td>{{data.profile.main.agi.value}}</td>
+            <td>{{data.profile.main.int.value}}</td>
+            <td>{{data.profile.main.wil.value}}</td>
+            <td>{{data.profile.main.fel.value}}</td>
+        </tr>
+    </table>
+</div>

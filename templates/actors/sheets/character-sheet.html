@@ -1,0 +1,40 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
+        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+    </header>
+
+    <nav class = "sheet-navigation tabs" data-group = "primary">
+        <a class = "tab-navigation" data-tab = "corestats">{{localize "wfrp2e.characters.ui.coreStats"}}</a>
+        <a class = "tab-navigation" data-tab = "background">{{localize "wfrp2e.characters.ui.background"}}</a>
+        <a class = "tab-navigation" data-tab = "inventory">{{localize "wfrp2e.characters.ui.inventory"}}</a>
+        <a class = "tab-navigation" data-tab = "weapons">{{localize "wfrp2e.characters.ui.weapons"}}</a>
+    </nav>
+
+    <section class = "sheet-body">
+        
+        <div class = "tab corestats flexrow" data-group = "primary" data-tab="corestats">      
+            <div class = "flexcol stats">
+                {{>"systems/wfrp2e/templates/actors/parts/actor-primarystatblock.html" sections=corestats}}
+                {{>"systems/wfrp2e/templates/actors/parts/actor-secondarystatblock.html" sections=corestats}}
+            </div>
+            <div class = "skills">
+                {{>"systems/wfrp2e/templates/actors/parts/actor-skills.html"}}
+            </div>
+        </div>
+    
+        <div class = "tab background flexcol" data-group="primary" data-tab="background">
+            {{>"systems/wfrp2e/templates/actors/parts/actor-background.html" sections=background}}
+        </div>
+
+        <div class = "tab inventory flexcol" data-group = "primary" data-tab="inventory">
+            {{>"systems/wfrp2e/templates/actors/parts/actor-inventory.html" sections=inventory}}
+        </div>
+
+        <div class = "tab weapons flexcol" data-group="primary" data-tab="weapons">
+            {{>"systems/wfrp2e/templates/actors/parts/actor-weapons.html" sections=weapons}}
+        </div>
+
+    </section>
+</form>
+

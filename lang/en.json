@@ -1,0 +1,277 @@
+{
+    "wfrp2e":{
+        "general":{
+            "ui":{
+                "description": "Description",
+                "details": "Details",
+                "attribute": "Attribute",
+                "itemProfile": "Profile"
+            }
+        },
+        "attributes":{
+            "none":"None",
+            "weaponSkill": "Weapon Skill",
+            "weaponSkillAbr": "WS",
+            "ballisticSkill": "Ballistic Skill",
+            "ballisticSkillAbr": "BS",
+            "strength": "Strength",
+            "strengthAbr": "Str",
+            "toughness": "Toughness",
+            "toughnessAbr": "Tou",
+            "agility": "Agility",
+            "agilityAbr": "Agi",
+            "intelligence": "Intelligence",
+            "intelligenceAbr": "Int",
+            "willPower": "Willpower",
+            "willPowerAbr": "Wil",
+            "fellowship": "Fellowship",
+            "fellowshipAbr": "Fel",
+
+            "attacks": "Attack",
+            "attacksAbr": "Atk",
+            "wounds": "Wounds",
+            "woundsAbr": "Wou",
+            "strBonus": "Strength bonus",
+            "strBonusAbr": "SB",
+            "touBonus": "Toughness bonus",
+            "touBonusAbr": "TB",
+            "movement": "Movement",
+            "movementAbr": "Mov",
+            "magic": "Magic",
+            "magicAbr": "Mag",
+            "insanity": "Insanity points",
+            "insanityAbr": "IP",
+            "fatePoints": "Fate points",
+            "fatePointsAbr": "FP"
+        },
+        "bodyParts":{
+            "head": "Head",
+            "rArm": "Right arm",
+            "lArm": "Left arm",
+            "body": "Body",
+            "rLeg": "Right leg",
+            "lLeg": "Left leg"
+        },
+        "currencies":{
+            "bp": "Brass Pennies",
+            "bpa": "BP",
+            "ss": "Silver Shillings",
+            "ssa": "SS",
+            "gc": "Golden Crowns",
+            "gca": "GC",
+            "other": "Other"
+        },
+        "items":{
+            "description": "Description",
+            "quantity": "Quantity",
+            "currency": "Currency",
+            "weight": "Encumberance",
+            "price": "Price",
+            "identified": "Identified?",
+            "types":{
+                "item": "Item",
+                "weapon": "Weapon",
+                "armor": "Armor",
+                "consumable":"Consumable",
+                "tool": "Tool"
+            },
+            "rarity":{
+                "value":"Rarity",
+                "veryRare": "Very rare",
+                "rare": "Rare",
+                "scarce": "Scarce",
+                "average": "Average",
+                "common": "Common",
+                "plentiful": "Plentiful",
+                "abundant": "Abundant"
+            },
+            "quality":{
+                "value": "Quality",
+                "best": "Best",
+                "good": "Good",
+                "common": "Common",
+                "poor": "Poor"
+            },
+            "armor": {
+                "armorType": "Armor type",
+                "armorValue": "Armor value",
+                "covers": "Covers",
+                "type":{
+                    "natural": "Natural",
+                    "light": "Light",
+                    "medium": "Medium",
+                    "heavy": "Heavy"
+                }
+            },
+            "weapon":{
+                "isRanged": "Is this a ranged weapon?",
+                "prof": "Proficient?",
+                "damage": "Damage",
+                "atributeUsedToHit": "Uses to hit",
+                "atributeUsedForDamage": "Damages with",
+                "modifier": "Modifier",
+                "range": "Range",
+                "rangeLong":"Long range",
+                "rangeUnits": "Units",
+                "reload": "Reload",
+                "reloadUnits":"Units",
+                "usesAmmo": "Uses ammunition?",
+                "ammunition": {
+                    "carried": "Carried",
+                    "weight": "Weight"
+                },
+                "qualities": "Qualities",
+                "qualityName": "Quality name",
+                "createNewQuality": "Add a new quality",
+                "qualityDescription":"Quality description",
+                "otherQualities": "Other Qualities",
+                "impact": "Impact",
+                "defensive": "Defensive",
+                "fast": "Fast",
+                "slow": "Slow",
+                "precise": "Precise",
+                "type":{
+                    "value": "Type",
+
+                    "ordinary": "Ordinary",
+
+                    "cavalry": "Cavalry",
+                    "jousting": "Jousting",
+                    "fencing": "Fencing",
+                    "parry": "Parry",
+                    "flail": "Flail",
+                    "great": "Great Weapons",
+                    "halberd": "Halberd",
+                    "poleArms": "Pole Arms",
+
+                    "crossbow": "Crossbow",
+                    "entangling": "Entangling",
+                    "longbow": "Longbow",
+                    "throwing": "Throwing"
+                }
+            },
+            "container":{
+                "maxCarryWeight": "Maximum carry weight",
+                "carryWeightMultiplier": "Carry weight multiplier",
+                "carrying": "Carrying:",
+                "of": "of",
+                "multiplied": "Times :",
+                "downTo":"down to:"
+            },
+            "consumable":{
+                "usesLeft": "Uses left",
+                "maxUses":"Maximum uses"
+            },
+            "tool":{
+                "usesLeft": "Uses left",
+                "maxUses": "Maximum uses",
+                "deteriorates": "Does this item deteriorate after using it?"
+            }
+        },
+        "talents":{
+           "ui":{
+                "talentEffects": "This talent has the following effects :",
+                "createNewEffect": "Create a new effect"
+           } 
+        },
+        "characters":{
+            "ui":{
+                "mainProfileHeader": "MAIN CHARACTER PROFILE",
+                "secondaryProfileHeader": "SECONDARY CHARACTER PROFILE",
+                "coreStats": "Core Stats",
+                "background": "Background",
+                "inventory": "Inventory",
+                "main": "Main",
+                "secondary": "Secondary",
+                "starting": "Starting",
+                "talents": "Talents",
+                "modifier": "Modifier",
+                "career": "Career Max",
+                "advance": "Advances",
+                "total": "Total",
+
+                "skillList": "Known skills:",
+                "basicSkills": "Basic skills:",
+                "advancedSkills": "Advanced skills:",
+                "knowledgeSkills": "Knowledge skills:",
+                "languageSkills": "Language skills:",
+                "tradeSkills": "Trade skills:",
+                "otherSkills": "Other skills:",
+                "skillName": "Name",
+                "skillBase": "Base",
+                "skillTraining": "Trained",
+                "skillAttribute":"Atr",
+                "skillModifier": "Mod",
+                "skillTotal": "Total",
+
+                "newItem": "New item",
+                "edit": "Edit",
+                "delete": "Delete",
+                "createNewSkill": "Create new skill",
+
+                "filterBy": "Filter by:",
+                "filterAll": "All",
+                "filterOnSelf": "On self",
+                "filterContainer": "Container",
+                "filterItemType": "Type",
+
+                "inventoryCurrencyConversion":"12 Brass Pennies make a Silver Shilling, and 20 Silver Shillings make a Golden Crown",
+                "inventoryCurrency":"Currency carried:",
+                "inventoryCurrencyWeight": "Should currency be weighted?",
+
+                "inventoryCarryBase":"Base carry weight:",
+                "inventoryCarryMult":"X",
+                "inventoryCarryMod":"+",
+                "inventoryCarryTotal":"Totaling to:",
+
+                "inventoryWeightAffectMov":"Should exceeding max carry weight lower movement?",
+
+                "inventoryCurrentlyCarrying":"Currently carrying:",
+                "inventoryNoEffectOnMovement": "This has no effect on movement",
+                "inventoryMovementAffected": "This reduces movement by:",
+
+                "inventoryItemName": "Name",
+                "inventoryItemWeight": "Weight",
+                "inventoryItemQuantity": "Quantity",
+                "inventoryItemUses": "Uses",
+                "inventoryItemInteraction": "Interaction",
+                "inventoryItemContainer": "Container",
+
+                "inventoryUse":"Use",
+                "inventoryEquip":"Equip",
+                "inventoryUnEquip":"Remove",
+
+                "weapons": "Weapons",
+                "weaponsMelee": "Equiped melee weapons",
+                "weaponsHeld": "Held?",
+                "weaponsName": "Name",
+                "weaponsDamage": "Dmg",
+                "weaponsToHit": "Hit",
+                "weaponsQualities": "Qualities",
+                "weaponsAttack": "Atk",
+                "weaponsAttackTT": "Attack with this weapon",
+                "weaponsReload": "Rld",
+                "weaponsParry": "Pry",
+                "weaponsParryTT": "Parry with this weapon",
+                "weaponsDamageRoll": "Dmg",
+                "weaponsDamageRollTT": "Roll damage for this weapon"
+            }
+        },
+        "skills":{
+            "types":{
+                "basic": "Basic",
+                "advanced": "Advanced",
+                "knowledge": "Knowledge",
+                "language": "Language",
+                "trade": "Trade",
+                "other": "Other"
+            },
+            "trainingLevels":{
+                "untrained": "Untrained",
+                "trained": "Trained",
+                "10": "+10%",
+                "20": "+20%"
+            }
+        }
+    }
+}

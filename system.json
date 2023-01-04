@@ -1,0 +1,31 @@
+{
+    "name": "wfrp2e",
+    "title": "Warhammer Fantasy Role Play 2nd Edition",
+    "description": "A FoundryVTT system for warhammer fantasy roleplay 2nd edition",
+    "version": "1.0.0",
+    "minimumCoreVersion": "0.8.6",
+    "compatibleCoreVersion": "10",
+    "author": "Tarinor",
+    "esmodules": [ "wfrp2e.js" ],
+    "styles": [ "css/wfrp2e.css" ],
+    "scripts": [
+
+    ],
+    "packs": [
+
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+    "gridDistance": 1,
+    "gridUnits": "mts",
+    "primaryTokenAttribute": "atributes.wounds",
+    "secondaryTokenAttribute": null,
+    "url": "",
+    "manifest": "",
+    "download": ""
+}

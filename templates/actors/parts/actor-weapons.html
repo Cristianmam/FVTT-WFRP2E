@@ -1,0 +1,26 @@
+<div class ="flexcol">
+    <table style="height: 50%;">
+        <tr><th colspan="8">{{localize "wfrp2e.characters.ui.weaponsMelee"}}</th></tr>
+        <tr>
+            <th width="5%">{{localize "wfrp2e.characters.ui.weaponsHeld"}}</th>
+            <th width="30%">{{localize "wfrp2e.characters.ui.weaponsName"}}</th>
+            <th width="10%">{{localize "wfrp2e.characters.ui.weaponsToHit"}}</th>
+            <th width="10%">{{localize "wfrp2e.characters.ui.weaponsDamage"}}</th>
+            <th width="30%">{{localize "wfrp2e.characters.ui.weaponsQualities"}}</th>
+            <th width="5%">{{localize "wfrp2e.characters.ui.weaponsAttack"}}</th>
+            <th width="5%">{{localize "wfrp2e.characters.ui.weaponsDamageRoll"}}</th>
+            <th width="5%">{{localize "wfrp2e.characters.ui.weaponsParry"}}</th>
+        </tr>
+        {{#each data.weapons as |weapon|}}
+            {{#if weapon.system.equiped}}
+                {{#if weapon.system.isRanged}}
+                
+                {{else}}
+                    <tr class="weapon-card" data-item-id="{{weapon.id}}">
+                        {{>"systems/wfrp2e/templates/actors/parts/actor-weapon-row.html" weapon}}
+                    </tr>
+                {{/if}}
+            {{/if}}
+        {{/each}}
+    </table>
+</div>

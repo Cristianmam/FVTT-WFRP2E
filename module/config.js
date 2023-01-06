@@ -37,6 +37,16 @@ wfrp2e.rarities = {
     plentiful:"wfrp2e.items.rarity.plentiful",
     abundant:"wfrp2e.items.rarity.abundant"
 }
+wfrp2e.actions={
+    none:"wfrp2e.actions.none",
+    ha:"wfrp2e.actions.ha",
+    fa:"wfrp2e.actions.fa"
+}
+wfrp2e.actionsAbr={
+    none:"wfrp2e.actionsAbr.none",
+    ha:"wfrp2e.actionsAbr.ha",
+    fa:"wfrp2e.actionsAbr.fa"
+}
 wfrp2e.qualities = {
     best:"wfrp2e.items.quality.best",
     good:"wfrp2e.items.quality.good",

@@ -61,6 +61,16 @@
             "gca": "GC",
             "other": "Other"
         },
+        "actions":{
+            "none": "-",
+            "ha": "Half action",
+            "fa": "Full action"
+        },
+        "actionsAbr":{
+            "none": "-",
+            "ha": "HA",
+            "fa": "FA"
+        },
         "items":{
             "description": "Description",
             "quantity": "Quantity",
@@ -248,9 +258,13 @@
                 "weaponsDamage": "Dmg",
                 "weaponsToHit": "Hit",
                 "weaponsQualities": "Qualities",
+                "weaponsRange": "Range",
+                "weaponsReloadTime": "Rld Time",
+                "weaponsAmmo": "Ammo",
                 "weaponsAttack": "Atk",
                 "weaponsAttackTT": "Attack with this weapon",
                 "weaponsReload": "Rld",
+                "weaponsReloadTT": "Reload this weapon",
                 "weaponsParry": "Pry",
                 "weaponsParryTT": "Parry with this weapon",
                 "weaponsDamageRoll": "Dmg",

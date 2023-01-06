@@ -60,7 +60,13 @@
             {{localize "wfrp2e.items.weapon.reload"}}
             <input name="data.reload.value" type="text" value="{{data.reload.value}}" data-dtype="Number"/>
             {{localize "wfrp2e.items.weapon.reloadUnits"}}
-            <input name="data.reload.units" type="text" value="{{data.reload.units}}" data-dtype="Number"/>
+            <select name="data.reload.units">
+            {{#select data.reload.units}}
+            {{#each config.actionsAbr as |name actions|}}
+            <option value="{{actions}}">{{localize name}}</option>
+            {{/each}}
+            {{/select}}
+            </select>
         </div>
         <div>
             {{localize "wfrp2e.items.weapon.usesAmmo"}}

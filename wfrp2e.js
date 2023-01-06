@@ -14,6 +14,7 @@ async function preloadHandlebarsTemplates(){
         "systems/wfrp2e/templates/actors/parts/actor-inventory.html",
         "systems/wfrp2e/templates/actors/parts/actor-weapons.html",
         "systems/wfrp2e/templates/actors/parts/actor-weapon-row.html",
+        "systems/wfrp2e/templates/actors/parts/actor-ranged-weapon-row.html",
         "systems/wfrp2e/templates/actors/parts/actor-inventory-itemrow.html",
                 
         "systems/wfrp2e/templates/items/parts/item-header.html",

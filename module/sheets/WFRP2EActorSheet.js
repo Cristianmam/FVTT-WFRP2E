@@ -591,4 +591,13 @@ export default class WFRP2EActorSheet extends ActorSheet {
         
         console.log("You would have parried with " + weapon[0].name);
     }
+
+    _onWeaponReload(event){
+        event.preventDefault();
+        let element = event.currentTarget;
+
+        let weapon = this.actor.items.filter(function (item) {return item.id == element.dataset.weapon});
+        
+        console.log("You would have reloaded a " + weapon[0].name);
+    }
 }

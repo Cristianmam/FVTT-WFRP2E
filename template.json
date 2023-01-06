@@ -235,7 +235,8 @@
                 },
                 "reload": {
                     "value": 0,
-                    "units": ""
+                    "units": "",
+                    "unitsAbr":""
                 },
                 "usesAmmo": false,
                 "ammunition": {

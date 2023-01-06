@@ -33,13 +33,16 @@ export default class WFRP2EItemSheet extends ItemSheet {
             config: CONFIG.wfrp2e
         };
 
-        switch (sheetData.data.type){
+        switch (sheetData.item.type){
             case 'skill':
                 this._skillInit(sheetData);
                 break;
+            
+            case 'weapon':
+                this._weaponInit(sheetData);
+                break;
         }
         
-        console.log("wfrp2e | Data ready for " + this.item.type)
 
         return sheetData;
     }
@@ -60,5 +63,13 @@ export default class WFRP2EItemSheet extends ItemSheet {
         sD.attributeAbr = game.i18n.localize(wfrp2e.attributesabbreviated[sD.data.attribute]);
     }
 
-
+    _weaponInit(sD){
+        if(sD.data.isRanged){
+            if(sD.data.reload.units == "" || sD.data.reload.units == null){
+                sD.data.reload.unitsAbr = game.i18n.localize(wfrp2e.actionsAbr.none);
+            }else{
+                sD.data.reload.unitsAbr = game.i18n.localize(wfrp2e.actionsAbr[sD.data.reload.units]);
+            }     
+        } 
+    }
 }

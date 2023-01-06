@@ -1,0 +1,31 @@
+<div class =  "weapon-card" data-weapon = "{{this.id}}">
+    <td><input name="system.held" type="checkbox" value="{{system.held}}"/></td>
+    <td>{{name}}</td>
+    <td>{{system.attribute.toHitValue}}</td>
+    <td>{{system.attribute.damageValue}}</td>
+    <td>{{system.qualities}}</td>
+    <td>{{system.range.value}}/{{system.range.long}} {{system.range.units}}</td>
+    <td>{{system.reload.value}} {{system.reload.unitsAbr}}</td>
+    <td>
+        {{#if system.usesAmmo}}
+            {{system.ammunition.ammount}}
+        {{else}}
+            -
+        {{/if}}
+    </td>
+    <td>
+        <a class = "weapon-attack" data-weapon = "{{this.id}}" title = '{{localize "wfrp2e.characters.ui.weaponsAttackTT"}}'>
+            <i class="fa-sharp fa-solid fa-bow-arrow"></i>
+        </a> 
+    </td>
+    <td>
+        <a class = "weapon-damage" data-weapon = "{{this.id}}" title = '{{localize "wfrp2e.characters.ui.weaponsDamageRollTT"}}'>
+            <i class="fa-solid fa-dice-d10"></i>
+        </a> 
+    </td>
+    <td>
+        <a class = "weapon-reload" data-weapon = "{{this.id}}" title = '{{localize "wfrp2e.characters.ui.weaponsReloadTT"}}'>
+            <i class="fa-solid fa-rotate-right"></i>
+        </a> 
+    </td>
+</div>

@@ -1,31 +1,53 @@
 {
-    "name": "wfrp2e",
-    "title": "Warhammer Fantasy Role Play 2nd Edition",
-    "description": "A FoundryVTT system for warhammer fantasy roleplay 2nd edition",
-    "version": "1.0.0",
-    "minimumCoreVersion": "0.8.6",
-    "compatibleCoreVersion": "10",
-    "author": "Tarinor",
-    "esmodules": [ "wfrp2e.js" ],
-    "styles": [ "css/wfrp2e.css" ],
-    "scripts": [
+    "id":"wfrp2e",
+    "title":"Warhammer Fantasy Roleplay 2nd Edition",
+    "description":"A Foundry VTT module for WFRP2E",
+    "version":"1.0.0",
+    "compatibility":
+    {
+        "minimum":"13",
+        "verified":"13"
+    },
 
+    "authors":
+    [
+        {
+            "name":"Tarinor"
+        }
     ],
-    "packs": [
 
+    "media": [
+    {
+      "type": "setup",
+      "url": "systems/wfrp2e/assets/Warhammer_fantasy_roleplay_cover.jpg",
+      "thumbnail": "systems/wfrp2e/assets/Warhammer_fantasy_roleplay_cover.jpg"
+    }
     ],
-    "languages": [
+
+    "esmodules": ["modules/SampleModule.mjs"],
+    "styles": ["styles/main.css"],
+
+    "languages":
+    [   
         {
             "lang": "en",
             "name": "English",
             "path": "lang/en.json"
         }
     ],
-    "gridDistance": 1,
-    "gridUnits": "mts",
-    "primaryTokenAttribute": "atributes.wounds",
-    "secondaryTokenAttribute": null,
-    "url": "",
-    "manifest": "",
-    "download": ""
+
+    "packs": [],
+    "packFolders": [],
+    "socket": false,
+    "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
+    "download": "This must link to a .zip file of the current version",
+    "background": "systems/wfrp2e/assets/Warhammer_fantasy_roleplay_cover.jpg",
+    
+    "grid":
+    {
+        "Distance": 5,
+        "gridUnits": "ft"
+    },
+
+    "primaryTokenAttribute": "wounds"
 }

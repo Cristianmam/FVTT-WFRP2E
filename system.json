@@ -24,7 +24,7 @@
     }
     ],
 
-    "esmodules": ["modules/SampleModule.mjs"],
+    "esmodules": ["modules/wfrp2e.mjs"],
     "styles": ["styles/main.css"],
 
     "languages":
@@ -35,6 +35,17 @@
             "path": "lang/en.json"
         }
     ],
+
+    "documentTypes": {
+        "Actor": {
+            "character": {
+                "htmlFields": ["biography"],
+                "filePathFields": {
+                    "crest": ["IMAGE"]
+                }
+            }
+        }
+    },
 
     "packs": [],
     "packFolders": [],

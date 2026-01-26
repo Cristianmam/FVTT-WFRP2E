@@ -1,0 +1,32 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+    
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        
+        <div class="header-fields">
+            <h1 class="career-title">
+                <input name="name" type="text" value="{{item.name}}" placeholder="Career Name"/>
+            </h1>
+            
+            <div class="career-checkboxes">
+                <label>
+                    <input type="checkbox" name="system.isCurrent" {{checked system.isCurrent}} />
+                    Current Career
+                </label>
+                <label>
+                    <input type="checkbox" name="system.careerEntered" {{checked system.careerEntered}} />
+                    Career Entered
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <div class="sheet-body">
+        <h3>Notes</h3>
+        <textarea name="system.description" rows="12" placeholder="Add any notes about this career here...">{{system.description}}</textarea>
+        
+        <p class="placeholder-message">
+            <strong>Career advancement tracking coming in future update!</strong>
+        </p>
+    </div>
+</form>

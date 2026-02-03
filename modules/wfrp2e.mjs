@@ -1,28 +1,34 @@
 import {WHCharacter} from "../documents/Character.mjs";
-
 import {WHCharacterSheet} from "../sheets/Character.mjs";
-
-//Check associated file for details on the schema
 import {CharacterDataModel} from "../data/Character.mjs";
+import {CareerDataModel} from "../data/Career.mjs";
+import {WHCareerSheet} from "../sheets/Career.mjs";
 
-Hooks.once("init",function ()
-{
-    //You hook up the schema with their doctypes here, declare docks on system.json
-    Object.assign(CONFIG.Actor.dataModels,
-    {
-        //These badboys throw errors because of place holder fields tagged as required in the schema. The schema should be adapted to what we need
-        character:CharacterDataModel
-    });
-    //We can hookup custom classes to our documents like so
-    Object.assign(CONFIG.Actor.documentClass,
-    {
-        character:WHCharacter
-    });
-    //We can register sheets for our items/actors like so
-    Actors.registerSheet('character',WHCharacterSheet,
-    {
-        types:["character"],
+Hooks.once("init", function () {
+    console.log("wfrp2e | Initializing system");
+    
+    // Register data models
+    CONFIG.Actor.dataModels.character = CharacterDataModel;
+    CONFIG.Item.dataModels.career = CareerDataModel;
+    
+    // Register custom Actor document class
+    CONFIG.Actor.documentClass = WHCharacter;
+    
+    // Register the character sheet
+    Actors.registerSheet('fvtt-wfrp2e', WHCharacterSheet, {
+        types: ["character"],
         makeDefault: true,
-        label:"Character Sheet"
+        label: "wfrp2e Character Sheet"
     });
+    
+    // Register the career item sheet
+    Items.registerSheet('fvtt-wfrp2e', WHCareerSheet, {
+        types: ["career"],
+        makeDefault: true,
+        label: "wfrp2e Career"
+    });
+
+    console.log("wfrp2e | System initialized");
+    console.log("wfrp2e | Actor class:", CONFIG.Actor.documentClass.name);
+    console.log("wfrp2e | Data Models:", CONFIG.Actor.dataModels, CONFIG.Item.dataModels);
 });

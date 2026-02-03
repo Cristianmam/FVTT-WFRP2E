@@ -1,7 +1,7 @@
 {
-    "id":"wfrp2e",
+    "id":"fvtt-wfrp2e",
     "title":"Warhammer Fantasy Roleplay 2nd Edition",
-    "description":"A Foundry VTT module for WFRP2E",
+    "description":"A Foundry VTT system for WFRP2E",
     "version":"1.0.0",
     "compatibility":
     {
@@ -13,14 +13,17 @@
     [
         {
             "name":"Tarinor"
+        },
+        {
+            "name":"justanothermage"
         }
     ],
 
     "media": [
     {
       "type": "setup",
-      "url": "systems/wfrp2e/assets/Warhammer_fantasy_roleplay_cover.jpg",
-      "thumbnail": "systems/wfrp2e/assets/Warhammer_fantasy_roleplay_cover.jpg"
+      "url": "systems/fvtt-wfrp2e/assets/Warhammer_fantasy_roleplay_cover.jpg",
+      "thumbnail": "systems/fvtt-wfrp2e/assets/Warhammer_fantasy_roleplay_cover.jpg"
     }
     ],
 
@@ -44,21 +47,29 @@
                     "crest": ["IMAGE"]
                 }
             }
+        },
+        "Item": {
+            "career": {},
+            "weapon": {},
+            "armour": {},
+            "spell": {},
+            "talent": {},
+            "item": {}
         }
     },
 
     "packs": [],
     "packFolders": [],
     "socket": false,
-    "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
-    "download": "This must link to a .zip file of the current version",
-    "background": "systems/wfrp2e/assets/Warhammer_fantasy_roleplay_cover.jpg",
+    "manifest": "Replace this with a link to the /latest release system.json",
+    "download": "link to a .zip file of the current version",
+    "background": "systems/fvtt-wfrp2e/assets/Warhammer_fantasy_roleplay_cover.jpg",
     
     "grid":
     {
-        "Distance": 5,
-        "gridUnits": "ft"
+        "gridDistance": 1,
+        "gridUnits": "meters"
     },
 
-    "primaryTokenAttribute": "wounds"
+    "primaryTokenAttribute": "system.secondary.wounds"
 }

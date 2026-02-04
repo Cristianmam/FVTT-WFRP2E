@@ -1,7 +1,7 @@
 {
     "id":"fvtt-wfrp2e",
     "title":"Warhammer Fantasy Roleplay 2nd Edition",
-    "description":"A Foundry VTT system for WFRP2E",
+    "description":"Unofficial Foundry VTT system for WFRP2E",
     "version":"1.0.0",
     "compatibility":
     {
@@ -54,7 +54,9 @@
             "armour": {},
             "spell": {},
             "talent": {},
-            "item": {}
+            "mutation": {},
+            "insanity": {},
+            "equipment": {}
         }
     },
 
@@ -67,8 +69,8 @@
     
     "grid":
     {
-        "gridDistance": 1,
-        "gridUnits": "meters"
+        "gridDistance": 2,
+        "gridUnits": "yards"
     },
 
     "primaryTokenAttribute": "system.secondary.wounds"

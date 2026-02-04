@@ -1,13 +1,10 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
-    
     <header class="sheet-header">
         <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
-        
         <div class="header-fields">
             <h1 class="career-title">
                 <input name="name" type="text" value="{{item.name}}" placeholder="Career Name"/>
             </h1>
-            
             <div class="career-checkboxes">
                 <label>
                     <input type="checkbox" name="system.isCurrent" {{checked system.isCurrent}} />
@@ -20,13 +17,80 @@
             </div>
         </div>
     </header>
-
     <div class="sheet-body">
-        <h3>Notes</h3>
-        <textarea name="system.description" rows="12" placeholder="Add any notes about this career here...">{{system.description}}</textarea>
-        
-        <p class="placeholder-message">
-            <strong>Career advancement tracking coming in future update!</strong>
-        </p>
+        <h2>Advance Scheme</h2>
+            {{!-- Main Profile Table --}}
+            <div class="profile-section">
+                <h3>Main Profile</h3>
+                <table class="profile-table">
+                    <thead>
+                        <tr>
+                            <th>WS</th>
+                            <th>BS</th>
+                            <th>S</th>
+                            <th>T</th>
+                            <th>Ag</th>
+                            <th>Int</th>
+                            <th>WP</th>
+                            <th>Fel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="number" name="careerWS" value="{{careerWS}}" /></td>
+                            <td><input type="number" name="careerBS" value="{{careerBS}}" /></td>
+                            <td><input type="number" name="careerS" value="{{careerS}}" /></td>
+                            <td><input type="number" name="careerT" value="{{careerT}}" /></td>
+                            <td><input type="number" name="careerAg" value="{{careerA}}" /></td>
+                            <td><input type="number" name="careerInt" value="{{careerInt}}" /></td>
+                            <td><input type="number" name="careerWP" value="{{careerWP}}" /></td>
+                            <td><input type="number" name="careerFel" value="{{careerFel}}" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            {{!-- Secondary Profile Table --}}
+            <div class="profile-section">
+                <h3>Secondary Profile</h3>
+                <table class="profile-table">
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>W</th>
+                            <th>SB</th>
+                            <th>TB</th>
+                            <th>M</th>
+                            <th>Mag</th>
+                            <th>IP</th>
+                            <th>FP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="number" name="careerAttacks" value="{{careerAttacks}}" /></td>
+                            <td><input type="number" name="careerWounds" value="{{careerWounds}}" /></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><input type="number" name="careerMovement" value="{{careerMovement}}" /></td>
+                            <td><input type="number" name="careerMagic" value="{{careerMagic}}" /></td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        <h2>Skills</h2>
+        <textarea name="system.skills" rows="6" placeholder="List career skills here, separated by commas...">{{system.skills}}</textarea>
+        <h2>Talents</h2>
+        <textarea name="system.talents" rows="6" placeholder="List career talents here, separated by commas...">{{system.talents}}</textarea>
+        <h2>Trappings</h2>
+        <textarea name="system.trappings" rows="6" placeholder="List career trappings here, separated by commas...">{{system.trappings}}</textarea>
+        <h2>Career Entries</h2>
+        <textarea name="system.entries" rows="6" placeholder="List career entries here, separated by commas...">{{system.entries}}</textarea>
+        <h2>Career Exits</h2>
+        <textarea name="system.exits" rows="6" placeholder="List career exits here, separated by commas...">{{system.exits}}</textarea>
+        <h2>Description</h2>
+        <textarea name="system.description" rows="12" placeholder="Insert information about this career here...">{{system.description}}</textarea>        
     </div>
 </form>

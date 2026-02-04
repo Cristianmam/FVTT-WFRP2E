@@ -12,7 +12,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                 // Appearance
                 gender: new fields.StringField({initial: ""}),
                 build: new fields.StringField({initial: ""}),
-                age: new fields.NumberField({required: true, nullable: false, integer: true, initial: 20}),
+                age: new fields.NumberField({integer: true, initial: 20, min: 0}),
                 height: new fields.StringField({initial: ""}),
                 weight: new fields.StringField({initial: ""}),
                 eyes: new fields.StringField({initial: ""}),
@@ -21,49 +21,73 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                 distinguishingMarks: new fields.StringField({initial: ""})
             }),
 
-            // Career Information - now handled by items, just store previous careers text
+            // Career Information; handled by items, just stores previous careers text
             previousCareersText: new fields.StringField({initial: ""}),
 
-            // Main Characteristics (Starting values)
+            // Main Characteristics
             characteristics: new fields.SchemaField({
                 ws: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    talents: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc: new fields.NumberField({required: true, integer: true, initial: 0}),
                     current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 bs: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    talents: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc: new fields.NumberField({required: true, integer: true, initial: 0}),
                     current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 s: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    talents: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc: new fields.NumberField({required: true, integer: true, initial: 0}),
                     current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 t: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    talents: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc: new fields.NumberField({required: true, integer: true, initial: 0}),
                     current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 ag: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    talents: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc: new fields.NumberField({required: true, integer: true, initial: 0}),
                     current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 int: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    talents: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc: new fields.NumberField({required: true, integer: true, initial: 0}),
                     current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 wp: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    talents: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc:new fields.NumberField({required:true,integer:true,initial : 0}),
                     current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 fel: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    talents: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc: new fields.NumberField({required: true, integer: true, initial: 0}),
                     current: new fields.NumberField({required: true, integer: true, initial: 0})
                 })
             }),
@@ -72,29 +96,43 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
             secondary: new fields.SchemaField({
                 attacks: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 1}),
+                    talents: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc: new fields.NumberField({required: true, integer: true, initial: 0}),
                     current: new fields.NumberField({required: true, integer: true, initial: 1})
                 }),
                 wounds: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    talents: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc:new fields.NumberField({required:true,integer:true,initial : 0}),
                     max: new fields.NumberField({required: true, integer: true, initial: 0}),
                     current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 strengthBonus: new fields.SchemaField({
-                    value: new fields.NumberField({required: true, integer: true, initial: 0})
+                    value: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 toughnessBonus: new fields.SchemaField({
-                    value: new fields.NumberField({required: true, integer: true, initial: 0})
+                    value: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 movement: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 4}),
+                    talents: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc:new fields.NumberField({required:true,integer:true,initial : 0}),
                     current: new fields.NumberField({required: true, integer: true, initial: 4})
                 }),
                 magic: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    talents: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc:new fields.NumberField({required:true,integer:true,initial : 0}),
                     current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 insanityPoints: new fields.SchemaField({
@@ -103,11 +141,12 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                 }),
                 fatePoints: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    advances: new fields.NumberField({required: true, integer: true, initial: 0}),
                     current: new fields.NumberField({required: true, integer: true, initial: 0})
                 })
             }),
 
-            // Armour Points by Location
+            // Armour Points by Location; placeholder until armor item gets implemented
             armour: new fields.SchemaField({
                 head: new fields.NumberField({required: true, integer: true, initial: 0}),
                 body: new fields.NumberField({required: true, integer: true, initial: 0}),
@@ -136,37 +175,10 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                 new fields.SchemaField({
                     name: new fields.StringField({required: true}),
                     characteristic: new fields.StringField({required: true}),
+                    category: new fields.StringField({required: true, initial: "basic", choices: ["basic", "advanced", "knowledge", "other"]}),
                     trained: new fields.BooleanField({initial: false}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
                     modifier: new fields.NumberField({required: true, integer: true, initial: 0})
-                }),
-                {initial: []}
-            ),
-
-            // Talents - stored as array
-            talents: new fields.ArrayField(
-                new fields.SchemaField({
-                    name: new fields.StringField({required: true}),
-                    description: new fields.StringField({initial: ""}),
-                    timesTaken: new fields.NumberField({required: true, integer: true, initial: 1})
-                }),
-                {initial: []}
-            ),
-
-            // Mutations - stored as array
-            mutations: new fields.ArrayField(
-                new fields.SchemaField({
-                    name: new fields.StringField({required: true}),
-                    description: new fields.StringField({initial: ""})
-                }),
-                {initial: []}
-            ),
-
-            // Insanities - stored as array
-            insanities: new fields.ArrayField(
-                new fields.SchemaField({
-                    name: new fields.StringField({required: true}),
-                    description: new fields.StringField({initial: ""})
                 }),
                 {initial: []}
             ),
@@ -187,9 +199,9 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
         }
     }
 
-    // Prepare derived data - calculates current values from initial + advances
+    // Prepare derived data - calculates current values from initial and advances
     prepareDerivedData() {
-        // Safety check - ensure data exists before processing
+        // Safety check that data exists before processing
         if (!this.characteristics || !this.secondary || !this.experience) {
             return;
         }

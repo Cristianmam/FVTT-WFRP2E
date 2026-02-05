@@ -139,9 +139,9 @@ export class WHCharacter extends Actor {
         super.prepareDerivedData();
         const systemData = this.system;
         // Debugging logs
-        console.log("prepareDerivedData running for:", this.name);
-        console.log("systemData.secondary exists?", !!systemData.secondary);
-        console.log("systemData.secondary:", systemData.secondary);
+        // console.log("prepareDerivedData running for:", this.name);
+        // console.log("systemData.secondary exists?", !!systemData.secondary);
+        // console.log("systemData.secondary:", systemData.secondary);
         // Calculate current characteristic values (New Method)
         if (systemData.characteristics) {
             for (let [key, char] of Object.entries(systemData.characteristics)) {
@@ -152,12 +152,12 @@ export class WHCharacter extends Actor {
             }
         }
         // Calculate current secondary characteristics (New Method)
-        console.log("About to process secondary profile..."); // Debugging log
+        // console.log("About to process secondary profile..."); // Debugging log
         if (systemData.secondary) {
-            console.log("Inside secondary profile block"); // Debugging log
-            console.log("Secondary keys:", Object.keys(systemData.secondary)); // Debugging log
+            // console.log("Inside secondary profile block"); // Debugging log
+            // console.log("Secondary keys:", Object.keys(systemData.secondary)); // Debugging log
             for (let [key, stat] of Object.entries(systemData.secondary)) {
-                console.log(`Processing secondary.${key}:`, stat); // Debugging log
+                // console.log(`Processing secondary.${key}:`, stat); // Debugging log
                 if (stat && typeof Object.entries(systemData.secondary)) {
                     if (stat && typeof stat === "object") {
                         if (

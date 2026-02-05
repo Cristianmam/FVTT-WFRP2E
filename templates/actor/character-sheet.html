@@ -526,7 +526,6 @@
                     <div class="career-name-section">
                         <h3>{{career.name}}</h3>
                         {{#if career.system.isCurrent}}<span class="current-badge">Current</span>{{/if}}
-                        {{#if career.system.careerEntered}}<span class="entered-badge">Entered</span>{{/if}}
                     </div>
                     
                     <div class="career-controls-section">
@@ -535,9 +534,9 @@
                                 <input type="checkbox" class="career-current-toggle" data-item-id="{{career.id}}" {{checked career.system.isCurrent}} />
                                 Current
                             </label>
-                            <label title="Mark career as entered">
-                                <input type="checkbox" class="career-entered-toggle" data-item-id="{{career.id}}" {{checked career.system.careerEntered}} />
+                            <label title="Career entered">
                                 Entered
+                                <input type="number" class="career-entered-input" data-item-id="{{career.id}}" value="{{career.system.careerEntered}}" min="0" data-dtype="Number" style="width: 50px;" />
                             </label>
                         </div>
                         
@@ -622,7 +621,6 @@
             
             <h3>Inventory</h3>
             <p><em>General items will be added when item system is implemented</em></p>
-            <p>This tab will contain carried equipment, trade goods, and miscellaneous items.</p>
         </div>
 
         {{!-- Biography Tab --}}

@@ -47,11 +47,15 @@ export class WHCharacterSheet extends ActorSheet {
         console.log("Mutations:", context.mutations);
         console.log("Insanities:", context.insanities);
         
-        /* Find current career for display in header
+        // Find current career for display in header
         if (context.careers) {
-            if (context.careers.length > 0) 
-        } else{
-        }*/
+            if (context.careers.length > 0) {
+                const currentCareer = context.careers.find(c => c.system.isCurrent);
+                context.currentCareer = currentCareer ? currentCareer.name : "None";
+            }
+        } else {
+            context.currentCareer = "None";
+        }
         
         this.SetCareerAdvancements();
 

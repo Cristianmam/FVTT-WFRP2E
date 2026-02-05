@@ -4,7 +4,6 @@ export class CareerDataModel extends foundry.abstract.TypeDataModel {
         return {
             isCurrent: new fields.BooleanField({initial: false}), // Current career checkbox
             careerEntered: new fields.NumberField({initial: 1, min:0}), // Career entered list
-            description: new fields.StringField({initial: ""}),
             careerWS: new fields.NumberField({initial: 0, min:0}),
             careerBS: new fields.NumberField({initial: 0, min:0}),
             careerS: new fields.NumberField({initial: 0, min:0}),
@@ -17,11 +16,12 @@ export class CareerDataModel extends foundry.abstract.TypeDataModel {
             careerWounds: new fields.NumberField({initial: 0, min:0}),
             careerMovement: new fields.NumberField({initial: 0, min:0}),
             careerMagic: new fields.NumberField({initial: 0, min:0}),
-            //carrerSkills: new fields.StringField({initial: ""}),
-            //careerTalents: new fields.StringField({initial: ""}),
-            //careerTrappings: new fields.StringField({initial: ""}),
-            //careerEntries: new fields.StringField({initial: ""}),
-            //careerExits: new fields.StringField({initial: ""})
+            careerSkills: new fields.StringField({initial: ""}),
+            careerTalents: new fields.StringField({initial: ""}),
+            careerTrappings: new fields.StringField({initial: ""}),
+            careerEntries: new fields.StringField({initial: ""}),
+            careerExits: new fields.StringField({initial: ""}),
+            careerDescription: new fields.StringField({initial: ""}),
         };
     }
 }

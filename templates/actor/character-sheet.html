@@ -65,41 +65,41 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th>WS</th>
-                            <th>BS</th>
-                            <th>S</th>
-                            <th>T</th>
-                            <th>Ag</th>
-                            <th>Int</th>
-                            <th>WP</th>
-                            <th>Fel</th>
+                            <th>{{localize "WFRP2E.CharacteristicAbbrevWS"}}</th>
+                            <th>{{localize "WFRP2E.CharacteristicAbbrevBS"}}</th>
+                            <th>{{localize "WFRP2E.CharacteristicAbbrevS"}}</th>
+                            <th>{{localize "WFRP2E.CharacteristicAbbrevT"}}</th>
+                            <th>{{localize "WFRP2E.CharacteristicAbbrevAg"}}</th>
+                            <th>{{localize "WFRP2E.CharacteristicAbbrevInt"}}</th>
+                            <th>{{localize "WFRP2E.CharacteristicAbbrevWP"}}</th>
+                            <th>{{localize "WFRP2E.CharacteristicAbbrevFel"}}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="row-label">Starting</td>
-                            <td><input type="number" name="system.characteristics.ws.initial" value="{{system.characteristics.ws.initial}}" /></td>
-                            <td><input type="number" name="system.characteristics.bs.initial" value="{{system.characteristics.bs.initial}}" /></td>
-                            <td><input type="number" name="system.characteristics.s.initial" value="{{system.characteristics.s.initial}}" /></td>
-                            <td><input type="number" name="system.characteristics.t.initial" value="{{system.characteristics.t.initial}}" /></td>
-                            <td><input type="number" name="system.characteristics.ag.initial" value="{{system.characteristics.ag.initial}}" /></td>
-                            <td><input type="number" name="system.characteristics.int.initial" value="{{system.characteristics.int.initial}}" /></td>
-                            <td><input type="number" name="system.characteristics.wp.initial" value="{{system.characteristics.wp.initial}}" /></td>
-                            <td><input type="number" name="system.characteristics.fel.initial" value="{{system.characteristics.fel.initial}}" /></td>
+                            <td class="row-label">{{localize "WFRP2E.RowStarting"}}</td>
+                            <td><input type="number" name="system.characteristics.ws.initial" value="{{system.characteristics.ws.initial}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.bs.initial" value="{{system.characteristics.bs.initial}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.s.initial" value="{{system.characteristics.s.initial}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.t.initial" value="{{system.characteristics.t.initial}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.ag.initial" value="{{system.characteristics.ag.initial}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.int.initial" value="{{system.characteristics.int.initial}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.wp.initial" value="{{system.characteristics.wp.initial}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.fel.initial" value="{{system.characteristics.fel.initial}}" data-dtype="Number" /></td>
                         </tr>
                         <tr>
-                            <td class="row-label">Talents</td>
-                            <td><input type="number" name="system.characteristics.ws.talents" value="{{system.characteristics.ws.talents}}" /></td>
-                            <td><input type="number" name="system.characteristics.bs.talents" value="{{system.characteristics.bs.talents}}" /></td>
-                            <td><input type="number" name="system.characteristics.s.talents" value="{{system.characteristics.s.talents}}" /></td>
-                            <td><input type="number" name="system.characteristics.t.talents" value="{{system.characteristics.t.talents}}" /></td>
-                            <td><input type="number" name="system.characteristics.ag.talents" value="{{system.characteristics.ag.talents}}" /></td>
-                            <td><input type="number" name="system.characteristics.int.talents" value="{{system.characteristics.int.talents}}" /></td>
-                            <td><input type="number" name="system.characteristics.wp.talents" value="{{system.characteristics.wp.talents}}" /></td>
-                            <td><input type="number" name="system.characteristics.fel.talents" value="{{system.characteristics.fel.talents}}" /></td>
+                            <td class="row-label">{{localize "WFRP2E.RowTalents"}}</td>
+                            <td><input type="number" name="system.characteristics.ws.talents" value="{{system.characteristics.ws.talents}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.bs.talents" value="{{system.characteristics.bs.talents}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.s.talents" value="{{system.characteristics.s.talents}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.t.talents" value="{{system.characteristics.t.talents}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.ag.talents" value="{{system.characteristics.ag.talents}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.int.talents" value="{{system.characteristics.int.talents}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.wp.talents" value="{{system.characteristics.wp.talents}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.fel.talents" value="{{system.characteristics.fel.talents}}" data-dtype="Number" /></td>
                         </tr>
                         <tr>
-                            <td class="row-label">Career</td>
+                            <td class="row-label">{{localize "WFRP2E.RowCareer"}}</td>
                             <td><span class="career-value">{{system.characteristics.ws.career}}</span></td>
                             <td><span class="career-value">{{system.characteristics.bs.career}}</span></td>
                             <td><span class="career-value">{{system.characteristics.s.career}}</span></td>
@@ -110,29 +110,29 @@
                             <td><span class="career-value">{{system.characteristics.fel.career}}</span></td>
                         </tr>
                         <tr>
-                            <td class="row-label">Advance</td>
-                            <td><input type="number" name="system.characteristics.ws.advances" value="{{system.characteristics.ws.advances}}" /></td>
-                            <td><input type="number" name="system.characteristics.bs.advances" value="{{system.characteristics.bs.advances}}" /></td>
-                            <td><input type="number" name="system.characteristics.s.advances" value="{{system.characteristics.s.advances}}" /></td>
-                            <td><input type="number" name="system.characteristics.t.advances" value="{{system.characteristics.t.advances}}" /></td>
-                            <td><input type="number" name="system.characteristics.ag.advances" value="{{system.characteristics.ag.advances}}" /></td>
-                            <td><input type="number" name="system.characteristics.int.advances" value="{{system.characteristics.int.advances}}" /></td>
-                            <td><input type="number" name="system.characteristics.wp.advances" value="{{system.characteristics.wp.advances}}" /></td>
-                            <td><input type="number" name="system.characteristics.fel.advances" value="{{system.characteristics.fel.advances}}" /></td>
+                            <td class="row-label">{{localize "WFRP2E.RowAdvance"}}</td>
+                            <td><input type="number" name="system.characteristics.ws.advances" value="{{system.characteristics.ws.advances}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.bs.advances" value="{{system.characteristics.bs.advances}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.s.advances" value="{{system.characteristics.s.advances}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.t.advances" value="{{system.characteristics.t.advances}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.ag.advances" value="{{system.characteristics.ag.advances}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.int.advances" value="{{system.characteristics.int.advances}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.wp.advances" value="{{system.characteristics.wp.advances}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.fel.advances" value="{{system.characteristics.fel.advances}}" data-dtype="Number" /></td>
                         </tr>
                         <tr>
-                            <td class="row-label">Misc</td>
-                            <td><input type="number" name="system.characteristics.ws.misc" value="{{system.characteristics.ws.misc}}" /></td>
-                            <td><input type="number" name="system.characteristics.bs.misc" value="{{system.characteristics.bs.misc}}" /></td>
-                            <td><input type="number" name="system.characteristics.s.misc" value="{{system.characteristics.s.misc}}" /></td>
-                            <td><input type="number" name="system.characteristics.t.misc" value="{{system.characteristics.t.misc}}" /></td>
-                            <td><input type="number" name="system.characteristics.ag.misc" value="{{system.characteristics.ag.misc}}" /></td>
-                            <td><input type="number" name="system.characteristics.int.misc" value="{{system.characteristics.int.misc}}" /></td>
-                            <td><input type="number" name="system.characteristics.wp.misc" value="{{system.characteristics.wp.misc}}" /></td>
-                            <td><input type="number" name="system.characteristics.fel.misc" value="{{system.characteristics.fel.misc}}" /></td>
+                            <td class="row-label">{{localize "WFRP2E.RowMisc"}}</td>
+                            <td><input type="number" name="system.characteristics.ws.misc" value="{{system.characteristics.ws.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.bs.misc" value="{{system.characteristics.bs.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.s.misc" value="{{system.characteristics.s.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.t.misc" value="{{system.characteristics.t.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.ag.misc" value="{{system.characteristics.ag.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.int.misc" value="{{system.characteristics.int.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.wp.misc" value="{{system.characteristics.wp.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.characteristics.fel.misc" value="{{system.characteristics.fel.misc}}" data-dtype="Number" /></td>
                         </tr>
                         <tr class="current-row">
-                            <td class="row-label">Current</td>
+                            <td class="row-label">{{localize "WFRP2E.RowCurrent"}}</td>
                             <td class="current-value rollable-characteristic" data-characteristic="ws" title="Click to roll">{{system.characteristics.ws.current}}</td>
                             <td class="current-value rollable-characteristic" data-characteristic="bs" title="Click to roll">{{system.characteristics.bs.current}}</td>
                             <td class="current-value rollable-characteristic" data-characteristic="s" title="Click to roll">{{system.characteristics.s.current}}</td>
@@ -153,82 +153,82 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th>A</th>
-                            <th>W</th>
-                            <th>SB</th>
-                            <th>TB</th>
-                            <th>M</th>
-                            <th>Mag</th>
-                            <th>IP</th>
-                            <th>FP</th>
+                            <th>{{localize "WFRP2E.SecondaryAbbrevA"}}</th>
+                            <th>{{localize "WFRP2E.SecondaryAbbrevW"}}</th>
+                            <th>{{localize "WFRP2E.SecondaryAbbrevSB"}}</th>
+                            <th>{{localize "WFRP2E.SecondaryAbbrevTB"}}</th>
+                            <th>{{localize "WFRP2E.SecondaryAbbrevM"}}</th>
+                            <th>{{localize "WFRP2E.SecondaryAbbrevMag"}}</th>
+                            <th>{{localize "WFRP2E.SecondaryAbbrevIP"}}</th>
+                            <th>{{localize "WFRP2E.SecondaryAbbrevFP"}}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="row-label">Starting</td>
-                            <td><input type="number" name="system.secondary.attacks.initial" value="{{system.secondary.attacks.initial}}" /></td>
-                            <td><input type="number" name="system.secondary.wounds.initial" value="{{system.secondary.wounds.initial}}" /></td>
+                            <td class="row-label">{{localize "WFRP2E.RowStarting"}}</td>
+                            <td><input type="number" name="system.secondary.attacks.initial" value="{{system.secondary.attacks.initial}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.wounds.initial" value="{{system.secondary.wounds.initial}}" data-dtype="Number" /></td>
                             <td class="calculated-value">-</td>
                             <td class="calculated-value">-</td>
-                            <td><input type="number" name="system.secondary.movement.initial" value="{{system.secondary.movement.initial}}" /></td>
-                            <td><input type="number" name="system.secondary.magic.initial" value="{{system.secondary.magic.initial}}" /></td>
-                            <td><input type="number" name="system.secondary.insanityPoints.total" value="{{system.secondary.insanityPoints.total}}" /></td>
-                            <td><input type="number" name="system.secondary.fatePoints.initial" value="{{system.secondary.fatePoints.initial}}" /></td>
+                            <td><input type="number" name="system.secondary.movement.initial" value="{{system.secondary.movement.initial}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.magic.initial" value="{{system.secondary.magic.initial}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.insanityPoints.total" value="{{system.secondary.insanityPoints.total}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.fatePoints.initial" value="{{system.secondary.fatePoints.initial}}" data-dtype="Number" /></td>
                         </tr>
                         <tr>
-                            <td class="row-label">Talents</td>
-                            <td><input type="number" name="system.secondary.attacks" value="{{system.secondary.attacks.talents}}" /></td>
-                            <td><input type="number" name="system.secondary.wounds.talents" value="{{system.secondary.wounds.talents}}" /></td>
+                            <td class="row-label">{{localize "WFRP2E.RowTalents"}}</td>
+                            <td><input type="number" name="system.secondary.attacks.talents" value="{{system.secondary.attacks.talents}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.wounds.talents" value="{{system.secondary.wounds.talents}}" data-dtype="Number" /></td>
                             <td>-</td>
                             <td>-</td>
-                            <td><input type="number" name="system.secondary.movement.talents" value="{{system.secondary.movement.talents}}" /></td>
-                            <td><input type="number" name="system.secondary.magic.talents" value="{{system.secondary.magic.talents}}" /></td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td class="row-label">Career</td>
-                            <td><span class="career-value">{{system.characteristics.ws.career}}</span></td>
-                            <td><span class="career-value">{{system.characteristics.bs.career}}</span></td>
-                            <td>-</td>
-                            <td>-<span class="career-value">{{system.characteristics.t.career}}</span></td>
-                            <td><span class="career-value">{{system.characteristics.ag.career}}</span></td>
-                            <td><span class="career-value">{{system.characteristics.int.career}}</span></td>
+                            <td><input type="number" name="system.secondary.movement.talents" value="{{system.secondary.movement.talents}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.magic.talents" value="{{system.secondary.magic.talents}}" data-dtype="Number" /></td>
                             <td>-</td>
                             <td>-</td>
                         </tr>
                         <tr>
-                            <td class="row-label">Advance</td>
-                            <td><input type="number" name="system.secondary.attacks.advances" value="{{system.secondary.attacks.advances}}" /></td>
-                            <td><input type="number" name="system.secondary.wounds.advances" value="{{system.secondary.wounds.advances}}" /></td>
+                            <td class="row-label">{{localize "WFRP2E.RowCareer"}}</td>
+                            <td><span class="career-value">{{system.secondary.attacks.career}}</span></td>
+                            <td><span class="career-value">{{system.secondary.wounds.career}}</span></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td><span class="career-value">{{system.secondary.movement.career}}</span></td>
+                            <td><span class="career-value">{{system.secondary.magic.career}}</span></td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">{{localize "WFRP2E.RowAdvance"}}</td>
+                            <td><input type="number" name="system.secondary.attacks.advances" value="{{system.secondary.attacks.advances}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.wounds.advances" value="{{system.secondary.wounds.advances}}" data-dtype="Number" /></td>
                             <td class="calculated-value">-</td>
                             <td class="calculated-value">-</td>
-                            <td><input type="number" name="system.secondary.movement.advances" value="{{system.secondary.movement.advances}}" /></td>
-                            <td><input type="number" name="system.secondary.magic.advances" value="{{system.secondary.magic.advances}}" /></td>
+                            <td><input type="number" name="system.secondary.movement.advances" value="{{system.secondary.movement.advances}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.magic.advances" value="{{system.secondary.magic.advances}}" data-dtype="Number" /></td>
                             <td class="calculated-value">-</td>
                             <td class="calculated-value">-</td>
                         </tr>
                         <tr>
-                            <td class="row-label">Misc</td>
-                            <td><input type="number" name="system.secondary.attacks.misc" value="{{system.secondary.attacks.misc}}" /></td>
-                            <td><input type="number" name="system.secondary.wounds.misc" value="{{system.secondary.wounds.misc}}" /></td>
-                            <td><input type="number" name="system.secondary.strengthBonus.misc" value="{{system.secondary.strengthBonus.misc}}" /></td>
-                            <td><input type="number" name="system.secondary.toughnessBonus.misc" value="{{system.secondary.toughnessBonus.misc}}" /></td>
-                            <td><input type="number" name="system.secondary.movement.misc" value="{{system.secondary.movement.misc}}" /></td>
-                            <td><input type="number" name="system.secondary.magic.misc" value="{{system.secondary.magic.misc}}" /></td>
-                            <td><input type="number" name="system.secondary.ip.misc" value="{{system.secondary.ip.misc}}" /></td>
-                            <td><input type="number" name="system.secondary.fp.misc" value="{{system.secondary.fp.misc}}" /></td>
+                            <td class="row-label">{{localize "WFRP2E.RowMisc"}}</td>
+                            <td><input type="number" name="system.secondary.attacks.misc" value="{{system.secondary.attacks.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.wounds.misc" value="{{system.secondary.wounds.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.strengthBonus.misc" value="{{system.secondary.strengthBonus.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.toughnessBonus.misc" value="{{system.secondary.toughnessBonus.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.movement.misc" value="{{system.secondary.movement.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.magic.misc" value="{{system.secondary.magic.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.ip.misc" value="{{system.secondary.ip.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.fp.misc" value="{{system.secondary.fp.misc}}" data-dtype="Number" /></td>
                         </tr>
                         <tr class="current-row">
-                            <td class="row-label">Current</td>
+                            <td class="row-label">{{localize "WFRP2E.RowCurrent"}}</td>
                             <td class="current-value">{{system.secondary.attacks.current}}</td>
-                            <td><input type="number" name="system.secondary.wounds.current" value="{{system.secondary.wounds.current}}" placeholder="Current" /></td>
+                            <td class="current-value">{{system.secondary.wounds.current}}</td>
                             <td class="current-value">{{system.secondary.strengthBonus.value}}</td>
                             <td class="current-value">{{system.secondary.toughnessBonus.value}}</td>
                             <td class="current-value">{{system.secondary.movement.current}}</td>
                             <td class="current-value">{{system.secondary.magic.current}}</td>
-                            <td><input type="number" name="system.secondary.insanityPoints.current" value="{{system.secondary.insanityPoints.current}}" /></td>
-                            <td><input type="number" name="system.secondary.fatePoints.current" value="{{system.secondary.fatePoints.current}}" /></td>
+                            <td class="current-value">{{system.secondary.ip.current}}</td>
+                            <td class="current-value">{{system.secondary.fp.current}}</td>
                         </tr>
                     </tbody>
                 </table>

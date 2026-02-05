@@ -32,7 +32,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                     career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
                     misc: new fields.NumberField({required: true, integer: true, initial: 0}),
-                    current: new fields.NumberField({required: true, integer: true, initial: 0})
+                    //current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 bs: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
@@ -40,7 +40,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                     career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
                     misc: new fields.NumberField({required: true, integer: true, initial: 0}),
-                    current: new fields.NumberField({required: true, integer: true, initial: 0})
+                    //current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 s: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
@@ -48,7 +48,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                     career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
                     misc: new fields.NumberField({required: true, integer: true, initial: 0}),
-                    current: new fields.NumberField({required: true, integer: true, initial: 0})
+                    //current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 t: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
@@ -56,7 +56,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                     career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
                     misc: new fields.NumberField({required: true, integer: true, initial: 0}),
-                    current: new fields.NumberField({required: true, integer: true, initial: 0})
+                    //current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 ag: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
@@ -64,7 +64,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                     career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
                     misc: new fields.NumberField({required: true, integer: true, initial: 0}),
-                    current: new fields.NumberField({required: true, integer: true, initial: 0})
+                    //current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 int: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
@@ -72,7 +72,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                     career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
                     misc: new fields.NumberField({required: true, integer: true, initial: 0}),
-                    current: new fields.NumberField({required: true, integer: true, initial: 0})
+                    //current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 wp: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
@@ -80,7 +80,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                     career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
                     misc:new fields.NumberField({required:true,integer:true,initial : 0}),
-                    current: new fields.NumberField({required: true, integer: true, initial: 0})
+                    //current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 fel: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
@@ -88,7 +88,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                     career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
                     misc: new fields.NumberField({required: true, integer: true, initial: 0}),
-                    current: new fields.NumberField({required: true, integer: true, initial: 0})
+                    //current: new fields.NumberField({required: true, integer: true, initial: 0})
                 })
             }),
 
@@ -100,7 +100,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                     career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
                     misc: new fields.NumberField({required: true, integer: true, initial: 0}),
-                    current: new fields.NumberField({required: true, integer: true, initial: 1})
+                    //current: new fields.NumberField({required: true, integer: true, initial: 1})
                 }),
                 wounds: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
@@ -109,7 +109,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
                     misc:new fields.NumberField({required:true,integer:true,initial : 0}),
                     max: new fields.NumberField({required: true, integer: true, initial: 0}),
-                    current: new fields.NumberField({required: true, integer: true, initial: 0})
+                    //current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 strengthBonus: new fields.SchemaField({
                     value: new fields.NumberField({required: true, integer: true, initial: 0}),
@@ -125,7 +125,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                     career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
                     misc:new fields.NumberField({required:true,integer:true,initial : 0}),
-                    current: new fields.NumberField({required: true, integer: true, initial: 4})
+                    //current: new fields.NumberField({required: true, integer: true, initial: 4})
                 }),
                 magic: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
@@ -133,7 +133,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                     career: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
                     misc:new fields.NumberField({required:true,integer:true,initial : 0}),
-                    current: new fields.NumberField({required: true, integer: true, initial: 0})
+                    //current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 insanityPoints: new fields.SchemaField({
                     current: new fields.NumberField({required: true, integer: true, initial: 0}),
@@ -142,7 +142,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                 fatePoints: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
                     advances: new fields.NumberField({required: true, integer: true, initial: 0}),
-                    current: new fields.NumberField({required: true, integer: true, initial: 0})
+                    //current: new fields.NumberField({required: true, integer: true, initial: 0})
                 })
             }),
 
@@ -196,53 +196,6 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
             biography: new fields.HTMLField({initial: ""}),
             history: new fields.HTMLField({initial: ""}),
             notes: new fields.HTMLField({initial: ""})
-        }
-    }
-
-    // Prepare derived data - calculates current values from initial and advances
-    prepareDerivedData() {
-        // Safety check that data exists before processing
-        if (!this.characteristics || !this.secondary || !this.experience) {
-            return;
-        }
-
-        // Calculate current characteristic values
-        if (this.characteristics.ws) this.characteristics.ws.current = this.characteristics.ws.initial + this.characteristics.ws.advances;
-        if (this.characteristics.bs) this.characteristics.bs.current = this.characteristics.bs.initial + this.characteristics.bs.advances;
-        if (this.characteristics.s) this.characteristics.s.current = this.characteristics.s.initial + this.characteristics.s.advances;
-        if (this.characteristics.t) this.characteristics.t.current = this.characteristics.t.initial + this.characteristics.t.advances;
-        if (this.characteristics.ag) this.characteristics.ag.current = this.characteristics.ag.initial + this.characteristics.ag.advances;
-        if (this.characteristics.int) this.characteristics.int.current = this.characteristics.int.initial + this.characteristics.int.advances;
-        if (this.characteristics.wp) this.characteristics.wp.current = this.characteristics.wp.initial + this.characteristics.wp.advances;
-        if (this.characteristics.fel) this.characteristics.fel.current = this.characteristics.fel.initial + this.characteristics.fel.advances;
-
-        // Calculate current secondary characteristics
-        if (this.secondary.attacks) {
-            this.secondary.attacks.current = this.secondary.attacks.initial + this.secondary.attacks.advances;
-        }
-        if (this.secondary.movement) {
-            this.secondary.movement.current = this.secondary.movement.initial + this.secondary.movement.advances;
-        }
-        if (this.secondary.magic) {
-            this.secondary.magic.current = this.secondary.magic.initial + this.secondary.magic.advances;
-        }
-        
-        // Calculate Strength and Toughness Bonus
-        if (this.characteristics.s && this.secondary.strengthBonus) {
-            this.secondary.strengthBonus.value = Math.floor(this.characteristics.s.current / 10);
-        }
-        if (this.characteristics.t && this.secondary.toughnessBonus) {
-            this.secondary.toughnessBonus.value = Math.floor(this.characteristics.t.current / 10);
-        }
-
-        // Calculate max wounds
-        if (this.secondary.wounds) {
-            this.secondary.wounds.max = this.secondary.wounds.initial + this.secondary.wounds.advances;
-        }
-        
-        // Calculate available experience
-        if (this.experience) {
-            this.experience.current = this.experience.total - this.experience.spent;
         }
     }
 }

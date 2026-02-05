@@ -172,7 +172,7 @@
                             <td class="calculated-value">-</td>
                             <td><input type="number" name="system.secondary.movement.initial" value="{{system.secondary.movement.initial}}" data-dtype="Number" /></td>
                             <td><input type="number" name="system.secondary.magic.initial" value="{{system.secondary.magic.initial}}" data-dtype="Number" /></td>
-                            <td><input type="number" name="system.secondary.insanityPoints.total" value="{{system.secondary.insanityPoints.total}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.insanityPoints.initial" value="{{system.secondary.insanityPoints.initial}}" data-dtype="Number" /></td>
                             <td><input type="number" name="system.secondary.fatePoints.initial" value="{{system.secondary.fatePoints.initial}}" data-dtype="Number" /></td>
                         </tr>
                         <tr>
@@ -216,8 +216,8 @@
                             <td><input type="number" name="system.secondary.toughnessBonus.misc" value="{{system.secondary.toughnessBonus.misc}}" data-dtype="Number" /></td>
                             <td><input type="number" name="system.secondary.movement.misc" value="{{system.secondary.movement.misc}}" data-dtype="Number" /></td>
                             <td><input type="number" name="system.secondary.magic.misc" value="{{system.secondary.magic.misc}}" data-dtype="Number" /></td>
-                            <td><input type="number" name="system.secondary.ip.misc" value="{{system.secondary.ip.misc}}" data-dtype="Number" /></td>
-                            <td><input type="number" name="system.secondary.fp.misc" value="{{system.secondary.fp.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.insanityPoints.misc" value="{{system.secondary.insanityPoints.misc}}" data-dtype="Number" /></td>
+                            <td><input type="number" name="system.secondary.fatePoints.misc" value="{{system.secondary.fatePoints.misc}}" data-dtype="Number" /></td>
                         </tr>
                         <tr class="current-row">
                             <td class="row-label">{{localize "WFRP2E.RowCurrent"}}</td>
@@ -227,8 +227,8 @@
                             <td class="current-value">{{system.secondary.toughnessBonus.value}}</td>
                             <td class="current-value">{{system.secondary.movement.current}}</td>
                             <td class="current-value">{{system.secondary.magic.current}}</td>
-                            <td class="current-value">{{system.secondary.ip.current}}</td>
-                            <td class="current-value">{{system.secondary.fp.current}}</td>
+                            <td class="current-value">{{system.secondary.insanityPoints.current}}</td>
+                            <td class="current-value">{{system.secondary.fatePoints.current}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -600,7 +600,6 @@
         <div class="tab spells" data-group="primary" data-tab="spells">
             <h3>Spells</h3>
             <p><em>Spells will be added when item system is implemented</em></p>
-            <p>This tab will contain all learned spells, cantrips, and magical abilities.</p>
         </div>
 
         {{!-- Inventory Tab --}}

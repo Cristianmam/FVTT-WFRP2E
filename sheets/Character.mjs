@@ -2,13 +2,6 @@ import {DEFAULT_SKILLS} from "../modules/default-skills.mjs";
 
 export class WHCharacterSheet extends ActorSheet {
     
-    /* Debugging for Stat calculation issues
-    async _updateObject(event, formData) {
-    console.log("Form data being submitted:", formData);
-    console.log("Expanded form data:", foundry.utils.expandObject(formData));
-    return super._updateObject(event, formData);
-    }*/
-
     /** @override */
     static get defaultOptions() {
         return foundry.utils.mergeObject(super.defaultOptions, {
@@ -54,11 +47,11 @@ export class WHCharacterSheet extends ActorSheet {
         console.log("Mutations:", context.mutations);
         console.log("Insanities:", context.insanities);
         
-        // Find current career for display in header
-        //if (context.careers) {
-        //    if (context.careers.length > 0) 
-        //} else{
-        //}
+        /* Find current career for display in header
+        if (context.careers) {
+            if (context.careers.length > 0) 
+        } else{
+        }*/
         
         this.SetCareerAdvancements();
 

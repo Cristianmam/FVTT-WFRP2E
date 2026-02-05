@@ -136,12 +136,12 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                     //current: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 insanityPoints: new fields.SchemaField({
-                    current: new fields.NumberField({required: true, integer: true, initial: 0}),
-                    total: new fields.NumberField({required: true, integer: true, initial: 0})
+                    initial: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc: new fields.NumberField({required: true, integer: true, initial: 0})
                 }),
                 fatePoints: new fields.SchemaField({
                     initial: new fields.NumberField({required: true, integer: true, initial: 0}),
-                    advances: new fields.NumberField({required: true, integer: true, initial: 0}),
+                    misc: new fields.NumberField({required: true, integer: true, initial: 0}),
                     //current: new fields.NumberField({required: true, integer: true, initial: 0})
                 })
             }),

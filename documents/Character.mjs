@@ -58,7 +58,6 @@ export class WHCharacter extends Actor {
                 flavor: flavor,
                 rollMode: rollMode
             });
-
             return roll;
         });
     }
@@ -135,16 +134,14 @@ export class WHCharacter extends Actor {
             return roll;
         });
     }
-    // Prepare derived data - calculates current values from initial and advances
+    // Prepare derived data
     prepareDerivedData() {
         super.prepareDerivedData();
         const systemData = this.system;
+        // Debugging logs
         console.log("prepareDerivedData running for:", this.name);
-        /* Safety check that data exists before processing
-        if (!this.characteristics || !this.secondary || !this.experience) {
-            return;
-        }*/
-
+        console.log("systemData.secondary exists?", !!systemData.secondary);
+        console.log("systemData.secondary:", systemData.secondary);
         // Calculate current characteristic values (New Method)
         if (systemData.characteristics) {
             for (let [key, char] of Object.entries(systemData.characteristics)) {
@@ -154,65 +151,44 @@ export class WHCharacter extends Actor {
                 }
             }
         }
-
-        /* Calculate current characteristic values (Old Method)
-        if (this.characteristics.ws) {
-            this.characteristics.ws.current = 
-                this.characteristics.ws.initial + this.characteristics.ws.talents + this.characteristics.ws.advances + this.characteristics.ws.misc;
-        }
-        if (this.characteristics.bs) {
-            this.characteristics.bs.current = 
-                this.characteristics.bs.initial + this.characteristics.bs.talents + this.characteristics.bs.advances + this.characteristics.bs.misc;
-        }
-        if (this.characteristics.s) {
-            this.characteristics.s.current = 
-                this.characteristics.s.initial + this.characteristics.s.talents + this.characteristics.s.advances + this.characteristics.s.misc;
-        }
-        if (this.characteristics.t) {
-            this.characteristics.t.current = 
-                this.characteristics.t.initial + this.characteristics.t.talents + this.characteristics.t.advances + this.characteristics.t.misc;
-        }
-        if (this.characteristics.ag) {
-            this.characteristics.ag.current = 
-                this.characteristics.ag.initial + this.characteristics.ag.talents + this.characteristics.ag.advances + this.characteristics.ag.misc;
-        }
-        if (this.characteristics.int) {
-                this.characteristics.int.current = this.characteristics.int.initial + this.characteristics.int.talents + this.characteristics.int.advances + this.characteristics.int.misc;
-        }
-        if (this.characteristics.wp) {
-                this.characteristics.wp.current = this.characteristics.wp.initial + this.characteristics.wp.talents + this.characteristics.wp.advances + this.characteristics.wp.misc;
-        }
-        if (this.characteristics.fel) {
-                this.characteristics.fel.current = this.characteristics.fel.initial + this.characteristics.fel.talents + this.characteristics.fel.advances + this.characteristics.fel.misc;
-        }
-        // Calculate current secondary characteristics
-        if (this.secondary.attacks) {
-                this.secondary.attacks.current = this.secondary.attacks.initial + this.secondary.attacks.advances;
-        }
-        if (this.secondary.movement) {
-                this.secondary.movement.current = this.secondary.movement.initial + this.secondary.movement.advances;
-        }
-        if (this.secondary.magic) {
-                this.secondary.magic.current = this.secondary.magic.initial + this.secondary.magic.advances;
-        }*/
-        
-        // Calculate Strength and Toughness Bonus
-        if (this.characteristics.s && this.secondary.strengthBonus) {
-                this.secondary.strengthBonus.value = Math.floor(this.characteristics.s.current / 10);
-        }
-        if (this.characteristics.t && this.secondary.toughnessBonus) {
-                this.secondary.toughnessBonus.value = Math.floor(this.characteristics.t.current / 10);
-        }
-
-        // Calculate max wounds
-        if (this.secondary.wounds) {
-                this.secondary.wounds.max = this.secondary.wounds.initial + this.secondary.wounds.advances;
-        }
-        
+        // Calculate current secondary characteristics (New Method)
+        console.log("About to process secondary profile..."); // Debugging log
+        if (systemData.secondary) {
+            console.log("Inside secondary profile block"); // Debugging log
+            console.log("Secondary keys:", Object.keys(systemData.secondary)); // Debugging log
+            for (let [key, stat] of Object.entries(systemData.secondary)) {
+                console.log(`Processing secondary.${key}:`, stat); // Debugging log
+                if (stat && typeof Object.entries(systemData.secondary)) {
+                    if (stat && typeof stat === "object") {
+                        if (
+                            key === "strengthBonus" || key === "toughnessBonus" || key === 'insanityPoints' || key === 'fatePoints') { 
+                            continue;
+                        }
+                        stat.current = (stat.initial || 0) + (stat.talents || 0) + (stat.advances || 0) + (stat.misc || 0);
+                        console.log(`secondary.${key}.current = ${stat.current}`);
+                    } 
+                }
+            }
+            if (systemData.characteristics.s && systemData.secondary.strengthBonus) {
+                systemData.secondary.strengthBonus.value = Math.floor(systemData.characteristics.s.current / 10) + (systemData.secondary.strengthBonus.misc || 0);
+                console.log(`strengthBonus.value = ${systemData.secondary.strengthBonus.value}`);
+            }
+            if (systemData.characteristics.t && systemData.secondary.toughnessBonus) {
+                systemData.secondary.toughnessBonus.value = Math.floor(systemData.characteristics.t.current / 10) + (systemData.secondary.toughnessBonus.misc || 0);
+                console.log(`toughnessBonus.value = ${systemData.secondary.toughnessBonus.value}`);
+            }
+            if (systemData.secondary.insanityPoints) {
+                systemData.secondary.insanityPoints.current = (systemData.secondary.insanityPoints.initial || 0) + (systemData.secondary.insanityPoints.misc || 0);
+                console.log(`insanityPoints.current = ${systemData.secondary.insanityPoints.current}`);
+            }
+            if (systemData.secondary.fatePoints) {
+                systemData.secondary.fatePoints.current = (systemData.secondary.fatePoints.initial || 0) + (systemData.secondary.fatePoints.misc || 0);
+                console.log(`fatePoints.current = ${systemData.secondary.fatePoints.current}`);
+            }
+        }        
         // Calculate available experience
         if (this.experience) {
                 this.experience.current = this.experience.total - this.experience.spent;
         }
     }
-
 }

@@ -154,7 +154,8 @@ export class WHCharacterSheet extends ActorSheet {
     }
 
     SetDefaultAdvancements() {
-        const chars = context.actor?.system.characteristics;
+        console.log("Characteristc: Trying to set defauls");
+        const chars = this.actor.system.characteristics;
         chars.ws.career = 0;
         chars.bs.career = 0;
         chars.s.career = 0;
@@ -163,10 +164,11 @@ export class WHCharacterSheet extends ActorSheet {
         chars.int.career = 0;
         chars.wp.career = 0;
         chars.fel.career = 0;
-        secondary.attacks.career = 0;
-        secondary.wounds.career = 0;
-        secondary.movement.career = 0;
-        secondary.magic.career = 0;
+        const secondaryCharacteristics = this.actor.system.secondary;
+        secondaryCharacteristics.attacks.career = 0;
+        secondaryCharacteristics.wounds.career = 0;
+        secondaryCharacteristics.movement.career = 0;
+        secondaryCharacteristics.magic.career = 0;
     }
 
     /** @override */

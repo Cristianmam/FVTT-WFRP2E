@@ -59,7 +59,11 @@ export class WHCharacterSheet extends ActorSheet {
         
         this.SetCareerAdvancements();
 
-        /*const currentCareer = context.careers.find(c => c.system.isCurrent);
+        // Calculate max career advances based on entered careers and update actor data accordingly
+        this._calculateMaxCareerAdvances();
+
+        /* Career Row calculations (old) 
+        const currentCareer = context.careers.find(c => c.system.isCurrent);
         context.currentCareer = currentCareer ? currentCareer.name : "None";
         const actorData = context.actor?.system || context.system;
 
@@ -109,6 +113,7 @@ export class WHCharacterSheet extends ActorSheet {
         return context;
     }
 
+    // Sets career advancements on the sheet based on current career 
     SetCareerAdvancements() {
         if (!context.careers) {
             this.SetDefaultAdvancements();
@@ -121,6 +126,7 @@ export class WHCharacterSheet extends ActorSheet {
         if (actorData?.characteristics) {
             const chars = actorData.characteristics;
             if (currentCareer) {
+                const careerData = currentCareer.system;
                 if (chars.ws?.hasOwnProperty('career')) chars.ws.career = careerData.careerWS || 0;
                 if (chars.bs?.hasOwnProperty('career')) chars.bs.career = careerData.careerBS || 0;
                 if (chars.s?.hasOwnProperty('career')) chars.s.career = careerData.careerS || 0;
@@ -157,6 +163,7 @@ export class WHCharacterSheet extends ActorSheet {
         }
     }
 
+    // Sets all career advancements to 0, used when no careers are entered
     SetDefaultAdvancements() {
         console.log("Characteristc: Trying to set defauls");
         const chars = this.actor.system.characteristics;
@@ -175,6 +182,94 @@ export class WHCharacterSheet extends ActorSheet {
         secondaryCharacteristics.magic.career = 0;
     }
 
+    // Calculates maximum career advances based on entered careers and updates actor's data accordingly
+    _calculateMaxCareerAdvances() {
+        const actorData = this.actor.system;
+
+        // Gat all careers that have been entered (careerEntered > 0)
+        const enteredCareers = this.actor.items.filter(
+            i => i.type === "career" && i.system.careerEntered > 0
+        );
+
+        console.log("Entered careers:", enteredCareers.map(c => c.name));
+        // If no careers have been entered, set all career advances to 0
+        if (enteredCareers.length === 0) {
+            if (actorData.characteristics) {
+                actorData.characteristics.ws.career = 0;
+                actorData.characteristics.bs.career = 0;
+                actorData.characteristics.s.career = 0;
+                actorData.characteristics.t.career = 0;
+                actorData.characteristics.ag.career = 0;
+                actorData.characteristics.int.career = 0;
+                actorData.characteristics.wp.career = 0;
+                actorData.characteristics.fel.career = 0;
+            }
+            if (actorData.secondary) {
+                actorData.secondary.attacks.career = 0;
+                actorData.secondary.wounds.career = 0;
+                actorData.secondary.movement.career = 0;
+                actorData.secondary.magic.career = 0;
+            }
+
+            if (actor.Data.characteristics) {
+                actorData.characteristics.ws.career = Math.max(...enteredCareers.map(c => c.system.careerWS || 0));
+                actorData.characteristics.bs.career = Math.max(...enteredCareers.map(c => c.system.careerBS || 0));
+                actorData.characteristics.s.career = Math.max(...enteredCareers.map(c => c.system.careerS || 0));
+                actorData.characteristics.t.career = Math.max(...enteredCareers.map(c => c.system.careerT || 0));
+                actorData.characteristics.ag.career = Math.max(...enteredCareers.map(c => c.system.careerAg || 0));
+                actorData.characteristics.int.career = Math.max(...enteredCareers.map(c => c.system.careerInt || 0));
+                actorData.characteristics.wp.career = Math.max(...enteredCareers.map(c => c.system.careerWP || 0));
+                actorData.characteristics.fel.career = Math.max(...enteredCareers.map(c => c.system.careerFel || 0));
+                console.log("Characteristic career advances calculates:", {
+                    ws: actorData.characteristics.ws.career,
+                    bs: actorData.characteristics.bs.career,
+                    s: actorData.characteristics.s.career,
+                    t: actorData.characteristics.t.career,
+                    ag: actorData.characteristics.ag.career,
+                    int: actorData.characteristics.int.career,
+                    wp: actorData.characteristics.wp.career,
+                    fel: actorData.characteristics.fel.career
+                })
+            }
+        }
+
+        // Find max values for each characteristic
+        if (actorData.characteristics) {
+            actorData.characteristics.ws.career = Math.max(...enteredCareers.map(c => c.system.careerWS || 0));
+            actorData.characteristics.bs.career = Math.max(...enteredCareers.map(c => c.system.careerBS || 0));
+            actorData.characteristics.s.career = Math.max(...enteredCareers.map(c => c.system.careerS || 0));
+            actorData.characteristics.t.career = Math.max(...enteredCareers.map(c => c.system.careerT || 0));
+            actorData.characteristics.ag.career = Math.max(...enteredCareers.map(c => c.system.careerAg || 0));
+            actorData.characteristics.int.career = Math.max(...enteredCareers.map(c => c.system.careerInt || 0));
+            actorData.characteristics.wp.career = Math.max(...enteredCareers.map(c => c.system.careerWP || 0));
+            actorData.characteristics.fel.career = Math.max(...enteredCareers.map(c => c.system.careerFel || 0));
+            console.log("Characteristic career advances calculated:", {
+                ws: actorData.characteristics.ws.career,
+                bs: actorData.characteristics.bs.career,
+                s: actorData.characteristics.s.career,
+                t: actorData.characteristics.t.career,
+                ag: actorData.characteristics.ag.career,
+                int: actorData.characteristics.int.career,
+                wp: actorData.characteristics.wp.career,
+                fel: actorData.characteristics.fel.career
+            })
+        }
+
+        // Find max values for secondary characteristics
+        if (actorData.secondary) {
+            actorData.secondary.attacks.career = Math.max(...enteredCareers.map(c => c.system.careerAttacks || 0));
+            actorData.secondary.wounds.career = Math.max(...enteredCareers.map(c => c.system.careerWounds || 0));
+            actorData.secondary.movement.career = Math.max(...enteredCareers.map(c => c.system.careerMovement || 0));
+            actorData.secondary.magic.career = Math.max(...enteredCareers.map(c => c.system.careerMagic || 0));
+            console.log("Secondary characteristic career advances calculated:", {
+                attacks: actorData.secondary.attacks.career,
+                wounds: actorData.secondary.wounds.career,
+                movement: actorData.secondary.movement.career,
+                magic: actorData.secondary.magic.career
+            })
+        }
+    }
+
     /** @override */
     activateListeners(html) {
         super.activateListeners(html);
@@ -190,9 +285,9 @@ export class WHCharacterSheet extends ActorSheet {
         html.find('.item-edit').click(this._onItemEdit.bind(this));
         html.find('.item-delete').click(this._onItemDelete.bind(this));
         
-        // Career toggles
+        // Career hookups 
         html.find('.career-current-toggle').change(this._onCareerCurrentToggle.bind(this));
-        html.find('.career-entered-toggle').change(this._onCareerEnteredToggle.bind(this));
+        html.find('.career-entered-input').change(this._onCareerEnteredChange.bind(this));
 
         // Add Skill
         html.find('.add-skill').click(this._onAddSkill.bind(this));
@@ -384,19 +479,29 @@ export class WHCharacterSheet extends ActorSheet {
     }
 
     /**
-     * Handle toggling career as entered
+     * Handle setting career as entered
      * @param {Event} event   The originating change event
      * @private
      */
-    async _onCareerEnteredToggle(event) {
+    async _onCareerEnteredChange(event) {
         event.preventDefault();
-        const itemId = event.currentTarget.dataset.itemId;
-        const item = this.actor.items.get(itemId);
-        const isChecked = event.currentTarget.checked;
-        
-        if (!item) return;
-        
-        await item.update({"system.careerEntered": isChecked});
+        const input = event.currentTarget;
+        const itemId = input.dataset.itemId;
+        const newValue = parseInt(input.value) || 0;
+                
+        // Get the career item from the actor
+        const career = this.actor.items.get(itemId);
+
+        if (career) {
+            try {
+                await career.update({"system.careerEntered": newValue});
+                console.log(`Successfully updated career ${career.name} entered value to ${newValue}`);
+            } catch (error) {
+                console.error("Error updating career:", error);
+            }
+        } else {
+            console.error("Career not found with ID:", itemId);
+        }
     }
 
     /**

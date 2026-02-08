@@ -16,11 +16,6 @@ export async function showRollDialog(title, baseTarget, rollCallback) {
                 <div class="form-group">
                     <label>Modifier:</label>
                     <input type="number" name="modifier" value="0" placeholder="+10 or -10" autofocus />
-                    <p class="hint">Positive for bonuses, negative for penalties</p>
-                </div>
-                <div class="form-group">
-                    <label>Final Target:</label>
-                    <input type="number" name="final-target" value="${baseTarget}" disabled class="final-target" />
                 </div>
                 <div class="form-group">
                     <label>Roll Mode:</label>

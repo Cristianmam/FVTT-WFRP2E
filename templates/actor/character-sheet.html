@@ -587,7 +587,82 @@
             </div>
 
             <h3>Weapons</h3>
-            <p><em>Weapons will be added when item system is implemented</em></p>
+            <div class="tab combat" data-group="primary" data-tab="combat">
+                <h3>Melee Weapons</h3>
+                <ol class="items-list combat-list">
+                    <li class="item items-header">
+                        <div class="item-name">Weapon</div>
+                        <div class="item-skill">Skill</div>
+                        <div class="item-damage">Damage</div>
+                        <div class="item-qualities">Qualities</div>
+                        <div class="item-controls"></div>
+                    </li>
+
+                    {{#each weapons as |weapon|}}
+                    {{#unless weapon.system.isRanged}}
+                    <li class="item" data-item-id="{{weapon.id}}">
+                        <div class="item-name">
+                            <img src="{{weapon.img}}" title="{{weapon.name}}" width="24" height="24"/>
+                            <h4>{{weapon.name}}</h4>
+                        </div>
+                        <div class="item-skill">{{weapon.system.group}}</div>
+                        <div class="item-damage">
+                            SB{{#if weapon.system.damage}}+{{weapon.system.damage}}{{/if}}
+                            {{#if weapon.system.hasImpact}}<span class="quality-badge">Impact</span>{{/if}}
+                        </div>
+                        <div class="item-qualities">
+                            {{weapon.system.qualities}}
+                            {{#if weapon.system.hasDefensive}}<span class="quality-badge">Defensive</span>{{/if}}
+                        </div>
+                        <div class="item-controls">
+                            <a class="Iitem-control weapon-attack" data-item-id="{{weapon.id}}" title="Attack with {{weapon.name}}">
+                                <i class="fas fa-dice-d20"></i>
+                            </a>
+                            <a class="item-control item-edit" data-item-id="{{weapon.id}}" title="Edit Weapon">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </div>
+                    </li>
+                    {{/unless}}
+                    {{/each}}                
+                </ol>
+                <h3>Ranged Weapons</h3>
+                <ol class="items-list combat-list">
+                    <li class="item items-header">
+                        <div class="item-name">Weapon</div>
+                        <div class="item-skill">Skill</div>
+                        <div class="item-range">Range</div>
+                        <div class="item-damage">Damage</div>
+                        <div class="item-reload">Reload</div>
+                        <div class="item-qualities">Qualities</div>
+                        <div class="item-controls"></div>
+                    </li>
+
+                    {{#each weapons as |weapon|}}
+                    {{#if weapon.system.isRanged}}
+                    <li class="item" data-item-id="{{weapon.id}}">
+                        <div class="item-name">
+                            <img src="{{weapon.img}}" title="{{weapon.name}}" width="24" height="24"/>
+                            <h4>{{weapon.name}}</h4>
+                        </div>
+                        <div class="item-skill">{{weapon.system.group}}</div>
+                        <div class="item-range">{{weapon.system.range}} yds</div>
+                        <div class="item-damage">{{weapon.system.damage}}</div>
+                        <div class="item-reload">{{weapon.system.reload}}</div>
+                        <div class="item-qualities">{{weapon.system.qualities}}</div>
+                        <div class="item-controls">
+                            <a class="item-control weapon-attack" data-item-id="{{weapon.id}}" title="Attack with {{weapon.name}}">
+                                <i class="fas fa-dice-d20"></i>
+                            </a>
+                            <a class="item-control item-edit" data-item-id="{{weapon.id}}" title="Edit Weapon">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </div>
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ol>
+            </div>
             
             <h3>Armour</h3>
             <p><em>Armour items will be added when item system is implemented</em></p>
@@ -618,7 +693,48 @@
             </div>
             
             <h3>Inventory</h3>
-            <p><em>General items will be added when item system is implemented</em></p>
+            <!-- Weapons Section-->
+             <div class="items-section">    
+                <h3 class="items-header">
+                    <span>Weapons</span>
+                    <a class="item-control item-create" data-type="weapon" title="Create Weapon">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </h3>
+
+                <ol class="items-list">
+                    <li class="item items-header">
+                        <div class="item-name">Name</div>
+                        <div class="item-group">Group</div>
+                        <div class="item-damage">Damage</div>
+                        <div class="item-range">Range</div>
+                        <div class="item-enc">Enc</div>
+                        <div class="item-controls"></div>
+                    </li>
+
+                    {{#each weapons as |weapon|}}
+                    <li class="item" data-item-id="{{weapon.id}}">
+                        <div class="item-name">
+                            <img src="{{weapon.img}}" title="{{weapon.name}}" width="24" height="24"/>
+                            <h4>{{weapon.name}}</h4>
+                        </div>
+                        <div class="item-group">{{weapon.system.group}}</div>
+                        <div class="item-damage">{{weapon.system.damage}}</div>
+                        <div class="item-range">{{#if weapon.system.range}}{{weapon.system.range}} yds{{else}}Melee{{/if}}</div>
+                        <div class="item-enc">{{weapon.system.encumberance}}</div>
+                        <div class="item-controls">
+                            <a class="item-control item-edit" data-item-id="{{weapon.id}}" title="Edit Weapon">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a class="item-control item-delete" data-item-id="{{weapon.id}}" title="Delete Weapon">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ol>
+             </div>
+             <!-- Insert other Inventory sections here -->
         </div>
 
         {{!-- Biography Tab --}}

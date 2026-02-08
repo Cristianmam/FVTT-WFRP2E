@@ -1,4 +1,5 @@
 import {DEFAULT_SKILLS} from "../modules/default-skills.mjs";
+import {WeaponAttackDialog} from "../modules/weapon-attack-dialog.mjs";
 
 export class WHCharacterSheet extends ActorSheet {
     
@@ -41,6 +42,7 @@ export class WHCharacterSheet extends ActorSheet {
         context.talents = this.actor.items.filter(i => i.type === "talent");
         context.mutations = this.actor.items.filter(i => i.type === "mutation");
         context.insanities = this.actor.items.filter(i => i.type === "insanity");
+        context.weapons = this.actor.items.filter(i => i.type === "weapon");
         
         // Debugging logs; adding these made items show up correctly to actor sheet
         console.log("Talents:", context.talents);
@@ -61,49 +63,6 @@ export class WHCharacterSheet extends ActorSheet {
 
         // Calculate max career advances based on entered careers and update actor data accordingly
         this._calculateMaxCareerAdvances();
-
-        /* Career Row calculations (old) 
-        const currentCareer = context.careers.find(c => c.system.isCurrent);
-        context.currentCareer = currentCareer ? currentCareer.name : "None";
-        const actorData = context.actor?.system || context.system;
-
-        if (actorData?.characteristics) {
-            const chars = actorData.characteristics;
-            if (currentCareer) {
-                if (chars.ws?.hasOwnProperty('career')) chars.ws.career = careerData.careerWS || 0;
-                if (chars.bs?.hasOwnProperty('career')) chars.bs.career = careerData.careerBS || 0;
-                if (chars.s?.hasOwnProperty('career')) chars.s.career = careerData.careerS || 0;
-                if (chars.t?.hasOwnProperty('career')) chars.t.career = careerData.careerT || 0;
-                if (chars.ag?.hasOwnProperty('career')) chars.ag.career = careerData.careerAg || 0;
-                if (chars.int?.hasOwnProperty('career')) chars.int.career = careerData.careerInt || 0;
-                if (chars.wp?.hasOwnProperty('career')) chars.wp.career = careerData.careerWP || 0;
-                if (chars.fel?.hasOwnProperty('career')) chars.fel.career = careerData.careerFel || 0;
-            } else {
-                if (chars.ws?.hasOwnProperty('career')) chars.ws.career = 0;
-                if (chars.bs?.hasOwnProperty('career')) chars.bs.career = 0;
-                if (chars.s?.hasOwnProperty('career')) chars.s.career = 0;
-                if (chars.t?.hasOwnProperty('career')) chars.t.career = 0;
-                if (chars.ag?.hasOwnProperty('career')) chars.ag.career = 0;
-                if (chars.int?.hasOwnProperty('career')) chars.int.career = 0;
-                if (chars.wp?.hasOwnProperty('career')) chars.wp.career = 0;
-                if (chars.fel?.hasOwnProperty('career')) chars.fel.career = 0;
-            }
-        }
-        if (actorData?.secondary) {
-            const secondary = actorData.secondary;
-            if (currentCareer) {
-                const careerData = currentCareer.system;
-                if (secondary.attacks?.hasOwnProperty('career')) secondary.attacks.career = careerData.careerAttacks || 0;
-                if (secondary.wounds?.hasOwnProperty('career')) secondary.wounds.career = careerData.careerWounds || 0;
-                if (secondary.movement?.hasOwnProperty('career')) secondary.movement.career = careerData.careerMovement || 0;
-                if (secondary.magic?.hasOwnProperty('career')) secondary.magic.career = careerData.careerMagic || 0;
-            } else {
-                if (secondary.attacks?.hasOwnProperty('career')) secondary.attacks.career = 0;
-                if (secondary.wounds?.hasOwnProperty('career')) secondary.wounds.career = 0;
-                if (secondary.movement?.hasOwnProperty('career')) secondary.movement.career = 0;
-                if (secondary.magic?.hasOwnProperty('career')) secondary.magic.career = 0;
-            }
-        }*/
 
         // Add enriched HTML
         context.enrichedBiography = await TextEditor.enrichHTML(this.actor.system.biography, {async: true});
@@ -280,6 +239,7 @@ export class WHCharacterSheet extends ActorSheet {
         // Roll handlers - these work even if sheet is not editable
         html.find('.rollable-characteristic').click(this._onRollCharacteristic.bind(this));
         html.find('.skill-roll').click(this._onRollSkill.bind(this));
+        html.find('.weapon-attack').click(this._onWeaponAttack.bind(this));
 
         // Item controls
         html.find('.item-edit').click(this._onItemEdit.bind(this));
@@ -501,6 +461,29 @@ export class WHCharacterSheet extends ActorSheet {
             }
         } else {
             console.error("Career not found with ID:", itemId);
+        }
+    }
+
+    /**
+     * Handle rolling a weapon attack
+     * @param {Event} event   The originating click event
+     * @private
+     */
+    async _onWeaponAttack(event) {
+        event.preventDefault();
+        const itemId = event.currentTarget.dataset.itemId;
+        const weapon = this.actor.items.get(itemId);
+
+        if (!weapon) {
+            console.error("Weapon not found!");
+            return;
+        }
+
+        // Create and show dialog window
+        const dialog = await WeaponAttackDialog.create(this.actor, weapon);
+
+        if (dialog) {
+            await dialog.executeAttack();
         }
     }
 

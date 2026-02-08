@@ -880,3 +880,201 @@
     padding: 6px;
     border: 1px solid #999;
 }
+
+/* Inventory and Combat Item Lists */
+.items-section {
+    margin-bottom: 1.5em;
+}
+
+.items-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+.items-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.items-list .item {
+    display: flex;
+    align-items: center;
+    padding: 0.25em 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.items-list .item:hover {
+    background-color: #f0f0f0;
+}
+
+.items-list .item-name {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.items-list .item-name h4 {
+    margin: 0;
+    font-size: 1em;
+}
+
+.items-list .item-group,
+.items-list .item-skill,
+.items-list .item-damage,
+.items-list .item-range,
+.items-list .item-reload,
+.items-list .item-enc {
+    flex: 1;
+    text-align: center;
+}
+
+.items-list .item-qualities {
+    flex: 2;
+    font-size: 0.9em;
+}
+
+.items-list .item-controls {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 0.5em;
+}
+
+.item-control {
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.item-control:hover {
+    color: #c00;
+}
+
+.quality-badge {
+    display: inline-block;
+    background: #4a90e2;
+    color: white;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-left: 0.25em;
+}
+
+/* Combat Tab Specific */
+.combat-list h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+/* Weapon Attack Chat Messages */
+.wfrp-roll.weapon-attack {
+    border: 2px solid #8b4513;
+    border-radius: 5px;
+    padding: 10px;
+    background: #f5f5dc;
+}
+
+.wfrp-roll .roll-header {
+    border-bottom: 2px solid #8b4513;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.wfrp-roll .roll-header h3 {
+    margin: 0;
+    color: #8b4513;
+}
+
+.wfrp-roll .actor-name {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.wfrp-roll .roll-result {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 3px;
+}
+
+.wfrp-roll .roll-result.success {
+    background: #90ee90;
+    border-left: 4px solid #228b22;
+}
+
+.wfrp-roll .roll-result.failure {
+    background: #ffcccb;
+    border-left: 4px solid #dc143c;
+}
+
+.wfrp-roll .roll-details {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.wfrp-roll .roll-value {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.wfrp-roll .roll-target {
+    color: #666;
+}
+
+.wfrp-roll .result-text {
+    font-size: 1.1em;
+}
+
+.wfrp-roll .hit-location {
+    margin: 10px 0;
+    padding: 5px;
+    background: #fff;
+    border-left: 3px solid #4169e1;
+}
+
+.wfrp-roll .damage-section {
+    margin: 10px 0;
+    padding: 10px;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.wfrp-roll .damage-section h4 {
+    margin: 0 0 10px 0;
+    color: #dc143c;
+}
+
+.wfrp-roll .damage-breakdown {
+    font-size: 0.9em;
+}
+
+.wfrp-roll .fury-roll {
+    color: #ff4500;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.wfrp-roll .fury-roll.fury-fail {
+    color: #666;
+    font-weight: normal;
+    text-decoration: line-through;
+}
+
+.wfrp-roll .fury-indicator {
+    margin-top: 10px;
+    padding: 5px;
+    background: #ff4500;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.wfrp-roll .fury-indicator i {
+    margin-right: 5px;
+}

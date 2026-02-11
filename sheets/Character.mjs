@@ -43,6 +43,7 @@ export class WHCharacterSheet extends ActorSheet {
         context.mutations = this.actor.items.filter(i => i.type === "mutation");
         context.insanities = this.actor.items.filter(i => i.type === "insanity");
         context.weapons = this.actor.items.filter(i => i.type === "weapon");
+        context.armours = this.actor.items.filter(i => i.type === "armour");
         
         // Debugging logs; adding these made items show up correctly to actor sheet
         console.log("Talents:", context.talents);
@@ -69,6 +70,28 @@ export class WHCharacterSheet extends ActorSheet {
         context.enrichedHistory = await TextEditor.enrichHTML(this.actor.system.history, {async: true});
         context.enrichedNotes = await TextEditor.enrichHTML(this.actor.system.notes, {async: true});
         
+        // Get armour and add equipment status from flags 
+        context.armour = this.actor.items.filter(i => i.type === "armour").map(armour => {
+            return {
+                id: armour.id,
+                name: armour.name,
+                img: armour.img,
+                system: armour.system,
+                isEquipped: armour.getFlag("fvtt-wfrp2e", "equipped") || false
+            };
+        });
+
+        // Calculate total armour for each location
+        context.totalArmour = {
+            head: this.actor.getTotalArmourForLocation('head'),
+            body: this.actor.getTotalArmourForLocation('body'),
+            leftArm: this.actor.getTotalArmourForLocation('leftArm'),
+            rightArm: this.actor.getTotalArmourForLocation('rightArm'),
+            leftLeg: this.actor.getTotalArmourForLocation('leftLeg'),
+            rightLeg: this.actor.getTotalArmourForLocation('rightLeg')
+        };
+        console.log("Total armour:", context.totalArmour);
+
         return context;
     }
 
@@ -233,6 +256,13 @@ export class WHCharacterSheet extends ActorSheet {
     activateListeners(html) {
         super.activateListeners(html);
 
+        console.log("=== Activiating Listeners ===");
+        console.log("Item edit buttons found:", html.find('.item-edit').length);
+        console.log("Item delete buttons found:", html.find('.item-delete').length);
+        html.find('.item-edit').each((i, el) => {
+            console.log(`Edit button ${i}: item-id = ${el.dataset.itemId}`);
+        });
+
         // Everything below here is only needed if the sheet is editable
         if (!this.isEditable) return;
 
@@ -241,7 +271,7 @@ export class WHCharacterSheet extends ActorSheet {
         html.find('.skill-roll').click(this._onRollSkill.bind(this));
         html.find('.weapon-attack').click(this._onWeaponAttack.bind(this));
 
-        // Item controls
+        // Item edit and delete handlers
         html.find('.item-edit').click(this._onItemEdit.bind(this));
         html.find('.item-delete').click(this._onItemDelete.bind(this));
         
@@ -271,6 +301,9 @@ export class WHCharacterSheet extends ActorSheet {
                 });
             };
         });
+
+        // Armour equip toggle
+        html.find('.armour-equipped-toggle').change(this._onArmourEquippedToggle.bind(this));
     }
 
     /**
@@ -389,6 +422,11 @@ export class WHCharacterSheet extends ActorSheet {
      * @private
      */
     async _onItemEdit(event) {
+        // Debugging logs
+        console.log("!!! EDIT HANDLER CALLED !!!");
+        console.log("Event:", event);
+        console.log("Current target:", event.currentTarget);
+
         event.preventDefault();
         const itemId = event.currentTarget.dataset.itemId;
         const item = this.actor.items.get(itemId);
@@ -403,6 +441,10 @@ export class WHCharacterSheet extends ActorSheet {
      * @private
      */
     async _onItemDelete(event) {
+        // Debugging logs
+        console.log("!!! DELETE HANDLER CALLED !!!");
+        console.log("Event:", event);
+
         event.preventDefault();
         const itemId = event.currentTarget.dataset.itemId;
         const item = this.actor.items.get(itemId);
@@ -487,6 +529,25 @@ export class WHCharacterSheet extends ActorSheet {
         }
     }
 
+    /**
+     * Handle toggling armour equipped status
+     * @param {Event} event   The originating change event
+     * @private
+     */
+    async _onArmourEquippedToggle(event) {
+        event.preventDefault();
+        const checkbox = event.currentTarget;
+        const itemId = checkbox.dataset.itemId;
+        const isEquipped = checkbox.checked;
+        // Get the armour item from the actor
+        const armour = this.actor.items.get(itemId);
+        if (armour) {
+            // Update equipped flag
+            await armour.setFlag("fvtt-wfrp2e", "equipped", isEquipped);
+            console.log(`Updated armour ${armour.name} equipped status to ${isEquipped}`);
+        }
+    }
+    
     /**
      * Handle adding a new mutation
      * @param {Event} event   The originating click event

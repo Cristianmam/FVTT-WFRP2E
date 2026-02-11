@@ -146,7 +146,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                 })
             }),
 
-            // Armour Points by Location; placeholder until armor item gets implemented
+            /* Armour Points by Location; placeholder until armor item gets implemented
             armour: new fields.SchemaField({
                 head: new fields.NumberField({required: true, integer: true, initial: 0}),
                 body: new fields.NumberField({required: true, integer: true, initial: 0}),
@@ -154,7 +154,7 @@ export class CharacterDataModel extends foundry.abstract.TypeDataModel
                 rightArm: new fields.NumberField({required: true, integer: true, initial: 0}),
                 leftLeg: new fields.NumberField({required: true, integer: true, initial: 0}),
                 rightLeg: new fields.NumberField({required: true, integer: true, initial: 0})
-            }),
+            }),*/
 
             // Experience and Advancement
             experience: new fields.SchemaField({

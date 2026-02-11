@@ -562,27 +562,27 @@
             <div class="armour-grid">
                 <div class="armour-location">
                     <label>Head</label>
-                    <input type="number" name="system.armour.head" value="{{system.armour.head}}" />
+                    <div class="armour-value">{{totalArmour.head}}</div>
                 </div>
                 <div class="armour-location">
                     <label>Body</label>
-                    <input type="number" name="system.armour.body" value="{{system.armour.body}}" />
+                    <div class="armour-value">{{totalArmour.body}}</div>
                 </div>
                 <div class="armour-location">
                     <label>Left Arm</label>
-                    <input type="number" name="system.armour.leftArm" value="{{system.armour.leftArm}}" />
+                    <div class="armour-value">{{totalArmour.leftArm}}</div>
                 </div>
                 <div class="armour-location">
                     <label>Right Arm</label>
-                    <input type="number" name="system.armour.rightArm" value="{{system.armour.rightArm}}" />
+                    <div class="armour-value">{{totalArmour.rightArm}}</div>
                 </div>
                 <div class="armour-location">
                     <label>Left Leg</label>
-                    <input type="number" name="system.armour.leftLeg" value="{{system.armour.leftLeg}}" />
+                    <div class="armour-value">{{totalArmour.leftLeg}}</div>
                 </div>
                 <div class="armour-location">
                     <label>Right Leg</label>
-                    <input type="number" name="system.armour.rightLeg" value="{{system.armour.rightLeg}}" />
+                    <div class="armour-value">{{totalArmour.rightLeg}}</div>
                 </div>
             </div>
 
@@ -665,7 +665,36 @@
             </div>
             
             <h3>Armour</h3>
-            <p><em>Armour items will be added when item system is implemented</em></p>
+            <ol class="items-list combat-list armour-list">
+                <li class="item items-header">
+                    <div class="item-equipped">Equipped</div>
+                    <div class="item-name">Armour</div>
+                    <div class="item-ap">AP</div>
+                    <div class="item-locations-compact">Coverage</div>
+                    <div class="item-controls"></div>
+                </li>
+
+                {{#each armours as |armour|}}
+                <li class="item {{#if armor.isEquipped}}equipped{{/if}}" data-item-id="{{armor.id}}">
+                    <div class="item-equipped">
+                        <input type="checkbox" class="armour-equipped-toggle" data-item-id="{{armor.id}}" {{checked armour.system.isEquipped}} title="Toggle Equipped"/>
+                    </div>
+                    <div class="item-name">{{armour.name}}</div>
+                    <div class="item-ap">{{armor.system.armourPoints}}</div>
+                    <div class="item-locations-compact">
+                        {{#if armor.system.head}}<span class="location-badge">H</span>{{/if}}
+                        {{#if armor.system.armLeft}}<span class="location-badge">LA</span>{{/if}}
+                        {{#if armor.system.armRight}}<span class="location-badge">RA</span>{{/if}}
+                        {{#if armor.system.legLeft}}<span class="location-badge">LL</span>{{/if}}
+                        {{#if armor.system.legRight}}<span class="location-badge">RL</span>{{/if}}
+                    </div>
+                    <div class="item-controls">
+                        <a class="item-control item-edit" data-item-id="{{armour.id}}" title="Edit Armour">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                </li>
+                {{/each}}
+            </ol>
         </div>
 
         {{!-- Spells Tab --}}
@@ -714,10 +743,7 @@
 
                     {{#each weapons as |weapon|}}
                     <li class="item" data-item-id="{{weapon.id}}">
-                        <div class="item-name">
-                            <img src="{{weapon.img}}" title="{{weapon.name}}" width="24" height="24"/>
-                            <h4>{{weapon.name}}</h4>
-                        </div>
+                        <div class="item-name">{{weapon.name}}</div>
                         <div class="item-group">{{weapon.system.group}}</div>
                         <div class="item-damage">{{weapon.system.damage}}</div>
                         <div class="item-range">{{#if weapon.system.range}}{{weapon.system.range}} yds{{else}}Melee{{/if}}</div>
@@ -734,6 +760,48 @@
                     {{/each}}
                 </ol>
              </div>
+             <!-- Armour Section -->
+            <div class="items-section">
+                <h3 class="items-header">
+                    <span>Armour</span>
+                    <a class="item-control item-create" data-type="armour" title="Create Armour">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </h3>
+
+                <ol class="items-list">
+                    <li class="item items-header">
+                        <div class="item-equipped">Equipped</div>
+                        <div class="item-name">Name</div>
+                        <div class="item-locations">Locations</div>
+                        <div class="item-ap">AP</div>
+                        <div class="item-enc">Enc</div>
+                        <div class="item-controls"></div>
+                    </li>
+
+                    {{#each armours as |armour|}}
+                    <li class="item {{#if armour.isEquipped}}equipped{{/if}}" data-item-id="{{armour.id}}">
+                        <div class="item-equipped">
+                            <input type="checkbox" class="armour-equipped-toggle" data-item-id="{{armour.id}}" {{checked armour.isEquipped}} title="Toggle Equipped"/>
+                        </div>
+                        <div class="item-name">
+                            <img src="{{armour.img}}" title="{{armour.name}}" width="24" height="24"/>
+                            <h4>{{armour.name}}</h4>
+                        </div>
+                        <div class="item-ap">{{armour.system.armourPoints}}</div>
+                        <div class="item-enc">{{armour.system.encumbrance}}</div>
+                        <div class="item-controls">
+                            <a class="item-control item-edit" data-item-id="{{armour.id}}" title="Edit Armour">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a class="item-control item-delete" data-item-id="{{armour.id}}" title="Delete Armour">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ol>
+            </div>
              <!-- Insert other Inventory sections here -->
         </div>
 

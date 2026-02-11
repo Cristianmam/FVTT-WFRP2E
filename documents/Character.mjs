@@ -191,4 +191,55 @@ export class WHCharacter extends Actor {
                 this.experience.current = this.experience.total - this.experience.spent;
         }
     }
+
+    /**
+     * Get all equipped armour items
+     */
+    get equippedArmour() {
+        return this.items.filter(item => 
+            item.type === "armour" && item.getFlag('wfrp2e', 'isEquipped')
+        );
+    }
+
+    /**
+     * Calculate total armour points for a specific location
+     * @paran {string} location - Location key
+     */
+    getArmourPointsForLocation(location) {
+        const equippedArmour = this.getEquippedArmour();
+        let totalAP = 0;
+
+        for (let armor of equippedArmour) {
+            if (armor.system[location]) {
+                totalAP += armor.system.armourPoints || 0;
+            }
+        }
+        return totalAP;
+    }
+
+    /**
+    * Calculate total armor points for a specific location
+    * Includes Toughness Bonus + equipped armor
+    * @param {string} location - Location key (head, body, armLeft, armRight, legLeft, legRight)
+    */
+    getTotalArmourForLocation(location) {
+        // Get Toughness Bonus
+        const toughnessBonus = this.system.secondary?.toughnessBonus?.value || 0;
+    
+        // Get equipped armor that protects this location
+        const equippedArmour = this.items.filter(item => 
+            item.type === "armour" && 
+            item.getFlag('fvtt-wfrp2e', 'isEquipped') &&
+            item.system[location]
+        );
+    
+        // Sum up armor points from all equipped armor
+        let armourPoints = 0;
+        for (let armor of equippedArmour) {
+            armourPoints += armor.system.armourPoints || 0;
+        }
+    
+        // Total = TB + Armor Points
+        return toughnessBonus + armourPoints;
+    }
 }
